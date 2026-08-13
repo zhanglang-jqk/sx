@@ -68,18 +68,20 @@
 	</fonts>
 
 	<!-- ============ 全局共享样式 ============ -->
-	<style name="style_card"
-	       bg_color="#card_top" bg_grad_color="#card_bot" bg_grad_dir="ver"
-	       border_color="#glass_brd" border_width="1" radius="20"
-	       shadow_width="18" shadow_opa="40" shadow_color="0x000000" shadow_offset_y="8" />
+	<styles>
+		<style name="style_card"
+		       bg_color="#card_top" bg_grad_color="#card_bot" bg_grad_dir="ver"
+		       border_color="#glass_brd" border_width="1" radius="20"
+		       shadow_width="18" shadow_opa="40" shadow_color="0x000000" shadow_offset_y="8" />
 
-	<!-- 玻璃卡片（浅色描边 + 半透明） -->
-	<style name="style_glass_card"
-	       bg_color="#card_top" bg_opa="200"
-	       border_color="#glass_brd" border_width="1" radius="20" />
+		<!-- 玻璃卡片（浅色描边 + 半透明） -->
+		<style name="style_glass_card"
+		       bg_color="#card_top" bg_opa="200"
+		       border_color="#glass_brd" border_width="1" radius="20" />
 
-	<!-- 浅色主按钮（深字） -->
-	<style name="style_btn_light"
-	       bg_color="#btn_light_a" bg_grad_color="#btn_light_b" bg_grad_dir="hor"
-	       radius="14" text_color="0x0A0D12" />
+		<!-- 浅色主按钮（深字） -->
+		<style name="style_btn_light"
+		       bg_color="#btn_light_a" bg_grad_color="#btn_light_b" bg_grad_dir="hor"
+		       radius="14" text_color="0x0A0D12" />
+	</styles>
 </globals>
