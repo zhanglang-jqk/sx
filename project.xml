@@ -1,0 +1,7 @@
+<project lvgl_version="9.5.0" name="smart_mirror">
+	<targets>
+		<target name="lcd">
+			<display width="1280" height="800" />
+		</target>
+	</targets>
+</project>

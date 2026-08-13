@@ -1,0 +1,180 @@
+<!--
+  智能镜 · 面部会诊 (1280×800)
+  还原自 apps-v1.html 面部会诊页
+-->
+<screen>
+  <styles>
+    <!-- 返回/图标按钮 -->
+    <style name="style_iconbtn" bg_color="#card_top" bg_opa="180" border_color="#glass_brd" border_width="1" radius="12" pad_all="9" />
+    <!-- 预览扫描面板 -->
+    <style name="style_preview" bg_color="#card_top" bg_opa="200" border_color="#glass_brd" border_width="1" radius="22" />
+    <!-- 二级 Tab -->
+    <style name="style_facetab" bg_color="#card_top" bg_opa="180" border_color="#glass_brd" border_width="1" radius="11" pad_ver="8" />
+    <style name="style_facetab_active" bg_color="#aqua" bg_grad_color="#blue" bg_grad_dir="hor" radius="11" pad_ver="8" />
+    <!-- 关注 pill -->
+    <style name="style_pill_warn" bg_color="0x3A3020" bg_opa="230" border_color="0x6A5A30" border_width="1" radius="20" pad_hor="13" pad_ver="5" />
+    <!-- 指标条轨道 -->
+    <style name="style_m_bar" bg_color="#FFFFFF" bg_opa="40" radius="4" />
+    <!-- 指标条填充 -->
+    <style name="style_m_fill" bg_color="#aqua" bg_grad_color="#blue" bg_grad_dir="hor" radius="4" />
+    <!-- 建议框 -->
+    <style name="style_advice" bg_color="#FFFFFF" bg_opa="40" border_color="#FFFFFF" border_opa="30" border_width="1" radius="16" pad_hor="18" pad_ver="14" />
+    <!-- 重新检测按钮 -->
+    <style name="style_rescan" bg_color="#btn_light_a" bg_grad_color="#btn_light_b" bg_grad_dir="hor" radius="14" pad_ver="12" />
+  </styles>
+
+  <view flex_flow="column" style_bg_color="#bg" width="100%" height="100%">
+
+    <!-- ================= AppBar ================= -->
+    <lv_obj flex_flow="row" width="100%" height="70"
+            style_flex_cross_place="center" style_pad_column="14"
+            style_pad_hor="28" style_pad_top="16">
+      <lv_obj width="40" height="40" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+        <style name="style_iconbtn"/>
+        <lv_label text="‹" style_text_color="#ink" style_text_font="#font_lg" />
+      </lv_obj>
+      <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+        <lv_label text="面部会诊" style_text_color="#ink" style_text_font="#font_lg" />
+        <lv_label text="AI 面诊 · 早期发现健康问题" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="3" />
+      </lv_obj>
+      <lv_obj width="40" height="40" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+        <style name="style_iconbtn"/>
+        <lv_label text="⚙" style_text_color="#ink2" style_text_font="#font_lg" />
+      </lv_obj>
+    </lv_obj>
+
+    <!-- ================= 主体：预览 + 结果 ================= -->
+    <lv_obj flex_flow="row" width="100%" height="content"
+            style_flex_cross_place="start" style_pad_column="24"
+            style_pad_hor="28" style_pad_top="8" style_pad_bottom="24">
+
+      <!-- ===== 左：扫描预览 ===== -->
+      <lv_obj width="46%" height="600" flex_flow="column"
+              style_flex_main_place="center" style_flex_cross_place="center">
+        <style name="style_preview"/>
+
+        <!-- 扫描角标（四角） -->
+        <lv_obj width="26" height="26" style_border_width="2" style_border_color="#green" style_border_side="left" style_border_opa="230" style_radius="6" />
+        <!-- 脸部示意：圆脸 + 眼睛 -->
+        <lv_obj width="150" height="150" style_radius="999" style_bg_color="#FFFFFF" style_bg_opa="50" style_border_width="2" style_border_color="#8A90A0" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center" style_pad_column="20">
+          <lv_obj width="10" height="10" style_radius="999" style_bg_color="#green" />
+          <lv_obj width="10" height="10" style_radius="999" style_bg_color="#green" />
+        </lv_obj>
+        <!-- 扫描线 -->
+        <lv_obj width="80%" height="2" style_bg_color="#green" style_bg_opa="230" style_shadow_width="8" style_shadow_color="#green" style_shadow_opa="180" />
+        <!-- 扫描中 -->
+        <lv_label text="SCANNING…" style_text_color="#green" style_text_font="#font_sm" style_pad_top="16" />
+      </lv_obj>
+
+      <!-- ===== 右：结果 ===== -->
+      <lv_obj flex_flow="column" width="54%" height="content" style_flex_grow="1">
+
+        <!-- 二级 Tab -->
+        <lv_obj flex_flow="row" width="100%" height="content" style_pad_column="8" style_pad_bottom="14">
+          <lv_obj flex_flow="row" width="content" height="content" style_flex_grow="1" style_flex_main_place="center">
+            <style name="style_facetab_active"/>
+            <lv_label text="本次会诊" style_text_color="0x0A0D12" style_text_font="#font_sm" />
+          </lv_obj>
+          <lv_obj flex_flow="row" width="content" height="content" style_flex_grow="1" style_flex_main_place="center">
+            <style name="style_facetab"/>
+            <lv_label text="健康趋势" style_text_color="#ink2" style_text_font="#font_sm" />
+          </lv_obj>
+        </lv_obj>
+
+        <!-- ===== 本次会诊 panel ===== -->
+        <lv_obj flex_flow="column" width="100%" height="content">
+
+          <!-- 关注 pill -->
+          <lv_obj width="content" height="content">
+            <style name="style_pill_warn"/>
+            <lv_label text="⚠ 发现 2 项需关注" style_text_color="#warn" style_text_font="#font_sm" />
+          </lv_obj>
+          <lv_label text="整体状态尚可 · 建议关注眼白与唇色" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="8" />
+
+          <!-- 指标列表 -->
+          <lv_obj flex_flow="column" width="100%" height="content" style_pad_top="16" style_pad_row="12">
+            <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="12">
+              <lv_label text="面色" width="72" style_text_color="#ink2" style_text_font="#font_md" />
+              <lv_obj width="content" height="7" style_flex_grow="1">
+                <style name="style_m_bar"/>
+                <lv_obj width="80%" height="100%">
+                  <style name="style_m_fill"/>
+                </lv_obj>
+              </lv_obj>
+              <lv_label text="红润" width="44" style_text_color="#ink" style_text_font="#font_md" style_text_align="right" />
+            </lv_obj>
+            <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="12">
+              <lv_label text="唇色" width="72" style_text_color="#ink2" style_text_font="#font_md" />
+              <lv_obj width="content" height="7" style_flex_grow="1">
+                <style name="style_m_bar"/>
+                <lv_obj width="44%" height="100%"><style name="style_m_fill"/></lv_obj>
+              </lv_obj>
+              <lv_label text="略淡" width="44" style_text_color="#ink" style_text_font="#font_md" style_text_align="right" />
+            </lv_obj>
+            <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="12">
+              <lv_label text="眼白" width="72" style_text_color="#ink2" style_text_font="#font_md" />
+              <lv_obj width="content" height="7" style_flex_grow="1">
+                <style name="style_m_bar"/>
+                <lv_obj width="40%" height="100%"><style name="style_m_fill"/></lv_obj>
+              </lv_obj>
+              <lv_label text="血丝" width="44" style_text_color="#ink" style_text_font="#font_md" style_text_align="right" />
+            </lv_obj>
+            <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="12">
+              <lv_label text="舌象" width="72" style_text_color="#ink2" style_text_font="#font_md" />
+              <lv_obj width="content" height="7" style_flex_grow="1">
+                <style name="style_m_bar"/>
+                <lv_obj width="70%" height="100%"><style name="style_m_fill"/></lv_obj>
+              </lv_obj>
+              <lv_label text="苔薄白" width="44" style_text_color="#ink" style_text_font="#font_md" style_text_align="right" />
+            </lv_obj>
+            <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="12">
+              <lv_label text="黑眼圈" width="72" style_text_color="#ink2" style_text_font="#font_md" />
+              <lv_obj width="content" height="7" style_flex_grow="1">
+                <style name="style_m_bar"/>
+                <lv_obj width="36%" height="100%"><style name="style_m_fill"/></lv_obj>
+              </lv_obj>
+              <lv_label text="明显" width="44" style_text_color="#ink" style_text_font="#font_md" style_text_align="right" />
+            </lv_obj>
+            <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="12">
+              <lv_label text="面部水肿" width="72" style_text_color="#ink2" style_text_font="#font_md" />
+              <lv_obj width="content" height="7" style_flex_grow="1">
+                <style name="style_m_bar"/>
+                <lv_obj width="14%" height="100%"><style name="style_m_fill"/></lv_obj>
+              </lv_obj>
+              <lv_label text="无" width="44" style_text_color="#ink" style_text_font="#font_md" style_text_align="right" />
+            </lv_obj>
+            <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="12">
+              <lv_label text="疲劳度" width="72" style_text_color="#ink2" style_text_font="#font_md" />
+              <lv_obj width="content" height="7" style_flex_grow="1">
+                <style name="style_m_bar"/>
+                <lv_obj width="62%" height="100%"><style name="style_m_fill"/></lv_obj>
+              </lv_obj>
+              <lv_label text="偏高" width="44" style_text_color="#ink" style_text_font="#font_md" style_text_align="right" />
+            </lv_obj>
+          </lv_obj>
+
+          <!-- 建议 -->
+          <lv_obj width="100%" height="content" style_pad_top="16">
+            <style name="style_advice"/>
+            <lv_label text="会诊建议：眼白血丝较多、唇色略淡，可能与睡眠不足、用眼过度有关。建议保证 7 小时睡眠、减少熬夜，睡前少看屏幕。"
+                      style_text_color="#ink2" style_text_font="#font_sm" />
+          </lv_obj>
+          <lv_obj width="100%" height="content" style_pad_top="10">
+            <style name="style_advice"/>
+            <lv_label text="关注项：若黑眼圈持续加深或唇色长期苍白，建议线下就医进一步检查。"
+                      style_text_color="#ink2" style_text_font="#font_sm" />
+          </lv_obj>
+
+          <lv_label text="* 结果仅供参考，不构成医疗诊断" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="12" />
+          <lv_obj width="100%" height="content" style_pad_top="12">
+            <style name="style_rescan"/>
+            <lv_label text="重新检测" style_text_color="0x0A0D12" style_text_font="#font_md" align="center" />
+          </lv_obj>
+        </lv_obj>
+
+      </lv_obj>
+
+    </lv_obj>
+
+  </view>
+</screen>

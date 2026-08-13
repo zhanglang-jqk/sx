@@ -1,0 +1,239 @@
+<!--
+  智能镜 · 设置 (1280×800)
+  还原自 apps-v1.html 设置页
+-->
+<screen>
+  <styles>
+    <!-- 返回/图标按钮 -->
+    <style name="style_iconbtn" bg_color="#card_top" bg_opa="180" border_color="#glass_brd" border_width="1" radius="12" pad_all="9" />
+    <!-- 设置组卡片 -->
+    <style name="style_set_group" bg_color="#card_top" bg_opa="200" border_color="#glass_brd" border_width="1" radius="18" />
+    <!-- 组标题 -->
+    <style name="style_set_ttl" text_color="#ink3" text_font="#font_sm" text_letter_space="2" />
+    <!-- 设置项图标块 -->
+    <style name="style_set_ic" bg_color="#FFFFFF" bg_opa="40" border_color="#FFFFFF" border_opa="35" border_width="1" radius="10" pad_all="8" />
+    <!-- 开关（LVGL 原生 switch，给指示条配色） -->
+    <style name="style_switch_on" bg_color="#green" />
+    <!-- 滑块指示条 -->
+    <style name="style_slider_ind" bg_color="#aqua" bg_grad_color="#blue" bg_grad_dir="hor" />
+  </styles>
+
+  <view flex_flow="column" style_bg_color="#bg" width="100%" height="100%">
+
+    <!-- ================= AppBar ================= -->
+    <lv_obj flex_flow="row" width="100%" height="70"
+            style_flex_cross_place="center" style_pad_column="14"
+            style_pad_hor="28" style_pad_top="16">
+      <lv_obj width="40" height="40" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+        <style name="style_iconbtn"/>
+        <lv_label text="‹" style_text_color="#ink" style_text_font="#font_lg" />
+      </lv_obj>
+      <lv_obj flex_flow="column" height="content">
+        <lv_label text="设置" style_text_color="#ink" style_text_font="#font_lg" />
+        <lv_label text="系统设置" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="3" />
+      </lv_obj>
+    </lv_obj>
+
+    <!-- ================= 双栏设置区 ================= -->
+    <lv_obj flex_flow="row" width="100%" height="content"
+            style_flex_cross_place="start" style_pad_column="22"
+            style_pad_hor="32" style_pad_top="10" style_pad_bottom="24">
+
+      <!-- ========== 左栏 ========== -->
+      <lv_obj flex_flow="column" width="50%" height="content" style_flex_grow="1" style_pad_row="16">
+
+        <!-- 网络与连接 -->
+        <lv_obj flex_flow="column" width="100%" height="content">
+          <style name="style_set_group"/>
+          <lv_label text="网络与连接" style_text_color="#ink3" style_text_font="#font_sm" style_pad_hor="20" style_pad_top="13" style_pad_bottom="9" />
+          <!-- WiFi -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="⌁" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="WiFi" style_text_color="#ink" style_text_font="#font_md" />
+              <lv_label text="Xiaozhi-4EA1" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+            </lv_obj>
+            <lv_label text="已连接" style_text_color="#aqua" style_text_font="#font_md" />
+            <lv_label text="›" style_text_color="#ink3" style_text_font="#font_md" />
+          </lv_obj>
+          <!-- 蓝牙 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="#FFFFFF" style_border_opa="30">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="◒" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="蓝牙" style_text_color="#ink" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_label text="关闭" style_text_color="#ink3" style_text_font="#font_md" />
+            <lv_label text="›" style_text_color="#ink3" style_text_font="#font_md" />
+          </lv_obj>
+        </lv_obj>
+
+        <!-- 显示与声音 -->
+        <lv_obj flex_flow="column" width="100%" height="content">
+          <style name="style_set_group"/>
+          <lv_label text="显示与声音" style_text_color="#ink3" style_text_font="#font_sm" style_pad_hor="20" style_pad_top="13" style_pad_bottom="9" />
+          <!-- 屏幕亮度 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="☀" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="屏幕亮度" style_text_color="#ink" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_slider width="150" min_value="0" max_value="100" value="70">
+              <style name="style_slider_ind" selector="indicator"/>
+            </lv_slider>
+          </lv_obj>
+          <!-- 音量 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="#FFFFFF" style_border_opa="30">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="♪" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="音量" style_text_color="#ink" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_slider width="150" min_value="0" max_value="100" value="55">
+              <style name="style_slider_ind" selector="indicator"/>
+            </lv_slider>
+          </lv_obj>
+          <!-- 深色模式 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="#FFFFFF" style_border_opa="30">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="◐" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="深色模式" style_text_color="#ink" style_text_font="#font_md" />
+              <lv_label text="镜面深色主题" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+            </lv_obj>
+            <lv_switch checked="true">
+              <style name="style_switch_on" selector="indicator|checked"/>
+            </lv_switch>
+          </lv_obj>
+        </lv_obj>
+
+      </lv_obj>
+
+      <!-- ========== 右栏 ========== -->
+      <lv_obj flex_flow="column" width="50%" height="content" style_flex_grow="1" style_pad_row="16">
+
+        <!-- 语音助手 -->
+        <lv_obj flex_flow="column" width="100%" height="content">
+          <style name="style_set_group"/>
+          <lv_label text="语音助手" style_text_color="#ink3" style_text_font="#font_sm" style_pad_hor="20" style_pad_top="13" style_pad_bottom="9" />
+          <!-- 语音唤醒 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="◙" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="语音唤醒" style_text_color="#ink" style_text_font="#font_md" />
+              <lv_label text="说「小美同学」唤醒" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+            </lv_obj>
+            <lv_switch checked="true">
+              <style name="style_switch_on" selector="indicator|checked"/>
+            </lv_switch>
+          </lv_obj>
+          <!-- 唤醒词 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="#FFFFFF" style_border_opa="30">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="⌁" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="唤醒词" style_text_color="#ink" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_label text="小美同学" style_text_color="#ink3" style_text_font="#font_md" />
+            <lv_label text="›" style_text_color="#ink3" style_text_font="#font_md" />
+          </lv_obj>
+        </lv_obj>
+
+        <!-- 隐私与健康 -->
+        <lv_obj flex_flow="column" width="100%" height="content">
+          <style name="style_set_group"/>
+          <lv_label text="隐私与健康" style_text_color="#ink3" style_text_font="#font_sm" style_pad_hor="20" style_pad_top="13" style_pad_bottom="9" />
+          <!-- 面部照片上云 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="▣" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="面部照片上云分析" style_text_color="#ink" style_text_font="#font_md" />
+              <lv_label text="用于 AI 面诊" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+            </lv_obj>
+            <lv_switch checked="true">
+              <style name="style_switch_on" selector="indicator|checked"/>
+            </lv_switch>
+          </lv_obj>
+          <!-- 皮肤照片上云 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="#FFFFFF" style_border_opa="30">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="▣" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="皮肤照片上云分析" style_text_color="#ink" style_text_font="#font_md" />
+              <lv_label text="用于 AI 肤质检测" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+            </lv_obj>
+            <lv_switch checked="true">
+              <style name="style_switch_on" selector="indicator|checked"/>
+            </lv_switch>
+          </lv_obj>
+          <!-- 清除健康数据 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="#FFFFFF" style_border_opa="30">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="▤" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="清除健康数据" style_text_color="#ink" style_text_font="#font_md" />
+              <lv_label text="删除本地历史记录" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+            </lv_obj>
+            <lv_label text="›" style_text_color="#ink3" style_text_font="#font_md" />
+          </lv_obj>
+        </lv_obj>
+
+        <!-- 关于 -->
+        <lv_obj flex_flow="column" width="100%" height="content">
+          <style name="style_set_group"/>
+          <lv_label text="关于" style_text_color="#ink3" style_text_font="#font_sm" style_pad_hor="20" style_pad_top="13" style_pad_bottom="9" />
+          <!-- 固件版本 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="◯" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="固件版本" style_text_color="#ink" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_label text="v2.4.2" style_text_color="#ink3" style_text_font="#font_md" />
+            <lv_label text="›" style_text_color="#ink3" style_text_font="#font_md" />
+          </lv_obj>
+          <!-- 检查更新 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="#FFFFFF" style_border_opa="30">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="▲" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="检查更新" style_text_color="#ink" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_label text="›" style_text_color="#ink3" style_text_font="#font_md" />
+          </lv_obj>
+        </lv_obj>
+
+      </lv_obj>
+
+    </lv_obj>
+
+  </view>
+</screen>

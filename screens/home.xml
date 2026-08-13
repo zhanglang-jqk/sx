@@ -1,0 +1,315 @@
+<!--
+  智能镜 · 主界面 (1280×800)
+  还原自 home-v3.html
+-->
+<screen>
+  <consts>
+    <!-- 引用 globals.xml 的颜色常量 -->
+  </consts>
+
+  <styles>
+    <!-- 状态栏玻璃 chip -->
+    <style name="style_chip_glass"
+           bg_color="#card_top" bg_opa="180"
+           border_color="#glass_brd" border_width="1" radius="30"
+           pad_hor="16" pad_ver="8" />
+    <!-- 卡片图标块（渐变） -->
+    <style name="style_face" bg_color="#chip_face_a" bg_grad_color="#chip_face_b" bg_grad_dir="hor" radius="13" pad_all="8" />
+    <style name="style_skin" bg_color="#chip_skin_a" bg_grad_color="#chip_skin_b" bg_grad_dir="hor" radius="13" pad_all="8" />
+    <style name="style_music" bg_color="#chip_music_a" bg_grad_color="#chip_music_b" bg_grad_dir="hor" radius="13" pad_all="8" />
+    <style name="style_kara" bg_color="#chip_kara_a" bg_grad_color="#chip_kara_b" bg_grad_dir="hor" radius="13" pad_all="8" />
+    <style name="style_wea" bg_color="#chip_wea_a" bg_grad_color="#chip_wea_b" bg_grad_dir="hor" radius="13" pad_all="8" />
+    <style name="style_cal" bg_color="#chip_cal_a" bg_grad_color="#chip_cal_b" bg_grad_dir="hor" radius="13" pad_all="8" />
+    <style name="style_news" bg_color="#chip_new_a" bg_grad_color="#chip_new_b" bg_grad_dir="hor" radius="13" pad_all="8" />
+    <!-- 标签 pill -->
+    <style name="style_tag_green" bg_color="0x1E3A30" bg_opa="230" border_color="0x2E6A50" border_width="1" radius="20" pad_hor="12" pad_ver="5" />
+    <style name="style_tag_rose" bg_color="0x3A2530" bg_opa="230" border_color="0x6A3A50" border_width="1" radius="20" pad_hor="12" pad_ver="5" />
+    <!-- 圆形控制按钮 -->
+    <style name="style_rbtn" bg_color="#card_top" bg_opa="180" border_color="#glass_brd" border_width="1" radius="999" pad_all="10" />
+    <style name="style_rbtn_main" bg_color="#chip_music_a" bg_grad_color="#lilac" bg_grad_dir="hor" radius="999" pad_all="10" />
+    <!-- 助手头像渐变块 -->
+    <style name="style_ava" bg_color="0x6F9EF2" bg_grad_color="0x6C5CE7" bg_grad_dir="hor" radius="18" />
+  </styles>
+
+  <view flex_flow="column" style_bg_color="#bg" width="100%" height="100%">
+
+    <!-- ================= 状态栏 ================= -->
+    <lv_obj flex_flow="row" width="100%" height="110"
+            style_flex_main_place="space_between" style_flex_cross_place="center"
+            style_pad_hor="30" style_pad_top="14">
+
+      <!-- 左：时间 + 日期 -->
+      <lv_obj flex_flow="column" height="content" style_flex_main_place="start">
+        <lv_label text="07:30" style_text_color="#ink" style_text_font="#font_num" />
+        <lv_label text="8月13日 · 周三" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="6" />
+      </lv_obj>
+
+      <!-- 中：天气 + 路况 -->
+      <lv_obj flex_flow="row" height="content" style_flex_cross_place="center" style_pad_column="10">
+        <lv_obj flex_flow="row" style_flex_cross_place="center">
+          <style name="style_chip_glass"/>
+          <lv_label text="☀" style_text_color="#aqua" style_text_font="#font_md" />
+          <lv_label text=" 26° 晴 · 湿度 62%" style_text_color="#ink2" style_text_font="#font_md" />
+        </lv_obj>
+        <lv_obj flex_flow="row" style_flex_cross_place="center">
+          <style name="style_chip_glass"/>
+          <lv_label text="▶" style_text_color="#amber" style_text_font="#font_md" />
+          <lv_label text=" 驾车 · 轻度拥堵 · 28分钟" style_text_color="#ink2" style_text_font="#font_md" />
+        </lv_obj>
+      </lv_obj>
+
+      <!-- 右：WiFi + 铃铛 + 电量 -->
+      <lv_obj flex_flow="row" height="content" style_flex_cross_place="center" style_pad_column="18" style_text_color="#ink2">
+        <lv_label text="⌁" style_text_color="#ink2" style_text_font="#font_lg" />
+        <lv_label text="◉" style_text_color="#ink2" style_text_font="#font_lg" />
+        <lv_obj flex_flow="row" style_flex_cross_place="center" style_pad_column="6">
+          <lv_label text="▮▮▮▮" style_text_color="#aqua" style_text_font="#font_md" />
+          <lv_label text=" 74%" style_text_color="#ink2" style_text_font="#font_md" />
+        </lv_obj>
+      </lv_obj>
+    </lv_obj>
+
+    <!-- ================= 简报条 ================= -->
+    <lv_obj width="100%" height="content" style_pad_hor="30" style_pad_top="4">
+      <lv_obj width="100%" height="content" flex_flow="row"
+              style_flex_cross_place="center"
+              style_bg_color="#card_top" style_bg_opa="180"
+              style_border_color="#glass_brd" style_border_width="1" style_radius="15"
+              style_pad_hor="18" style_pad_ver="10">
+        <lv_label text="◈ 本地今日多云转晴 · 最高 26°C   ·  科技：国产大模型再获突破   ·  生活：本周晴好天气居多 适宜晨练"
+                  style_text_color="#ink2" style_text_font="#font_sm" />
+      </lv_obj>
+    </lv_obj>
+
+    <!-- ================= 卡片墙（横向滚动） ================= -->
+    <lv_obj flex_flow="row" width="100%" height="content"
+            style_flex_cross_place="start"
+            style_pad_hor="30" style_pad_top="16" style_pad_bottom="8" style_pad_column="16">
+
+      <!-- ===== 音乐卡 ===== -->
+      <lv_obj width="368" height="content" flex_flow="column">
+        <style name="style_card"/>
+        <lv_obj flex_flow="row" width="100%" style_flex_cross_place="center" style_pad_hor="20" style_pad_top="18" style_pad_bottom="8" style_pad_column="12">
+          <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+            <style name="style_music"/>
+            <lv_label text="♪" style_text_color="#FFFFFF" style_text_font="#font_lg" />
+          </lv_obj>
+          <lv_obj flex_flow="column" height="content" style_flex_main_place="start">
+            <lv_label text="音乐" style_text_color="#ink" style_text_font="#font_lg" />
+            <lv_label text="正在播放" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+          </lv_obj>
+        </lv_obj>
+        <lv_obj flex_flow="column" width="100%" height="content" style_pad_hor="20" style_pad_bottom="18">
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="12" style_pad_bottom="14">
+            <lv_obj width="56" height="56" style_radius="999" style_bg_color="#chip_music_a" style_bg_grad_color="#lilac" style_bg_grad_dir="hor" />
+            <lv_obj flex_flow="column" height="content">
+              <lv_label text="晴天" style_text_color="#ink" style_text_font="#font_lg" />
+              <lv_label text="周杰伦 · 叶惠美" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="4" />
+            </lv_obj>
+          </lv_obj>
+          <lv_obj width="100%" height="6" style_radius="3" style_bg_color="0x2A2F38">
+            <lv_obj width="42%" height="100%" style_radius="3" style_bg_color="#chip_music_a" style_bg_grad_color="#lilac" style_bg_grad_dir="hor" />
+          </lv_obj>
+          <lv_obj flex_flow="row" width="100%" style_flex_main_place="space_between" style_pad_top="8">
+            <lv_label text="1:42" style_text_color="#ink3" style_text_font="#font_sm" />
+            <lv_label text="4:26" style_text_color="#ink3" style_text_font="#font_sm" />
+          </lv_obj>
+          <lv_obj flex_flow="row" width="100%" style_flex_main_place="center" style_flex_cross_place="center" style_pad_top="14" style_pad_column="20">
+            <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_rbtn"/><lv_label text="◀◀" style_text_color="#ink" style_text_font="#font_sm" />
+            </lv_obj>
+            <lv_obj width="52" height="52" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_rbtn_main"/><lv_label text="▮▮" style_text_color="#FFFFFF" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_rbtn"/><lv_label text="▶▶" style_text_color="#ink" style_text_font="#font_sm" />
+            </lv_obj>
+          </lv_obj>
+        </lv_obj>
+      </lv_obj>
+
+      <!-- ===== K歌卡 ===== -->
+      <lv_obj width="368" height="content" flex_flow="column">
+        <style name="style_card"/>
+        <lv_obj flex_flow="row" width="100%" style_flex_cross_place="center" style_pad_hor="20" style_pad_top="18" style_pad_bottom="8" style_pad_column="12">
+          <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+            <style name="style_kara"/>
+            <lv_label text="♬" style_text_color="#FFFFFF" style_text_font="#font_lg" />
+          </lv_obj>
+          <lv_obj flex_flow="column" height="content">
+            <lv_label text="K 歌" style_text_color="#ink" style_text_font="#font_lg" />
+            <lv_label text="伴奏模式" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+          </lv_obj>
+        </lv_obj>
+        <lv_obj flex_flow="column" width="100%" height="content" style_pad_hor="20" style_pad_bottom="18">
+          <lv_obj flex_flow="column" width="100%" height="content" style_pad_top="8">
+            <lv_label text="故事的小黄花 从出生那年就飘着" style_text_color="#ink3" style_text_font="#font_md" />
+            <lv_label text="童年的荡秋千 随记忆一直晃到现在" style_text_color="#amber" style_text_font="#font_md" style_pad_top="6" />
+          </lv_obj>
+          <lv_label text="纯伴奏 · 跟唱" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="10" />
+          <lv_obj flex_flow="row" width="100%" style_flex_main_place="center" style_flex_cross_place="center" style_pad_top="14" style_pad_column="20">
+            <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_rbtn"/><lv_label text="◀◀" style_text_color="#ink" style_text_font="#font_sm" />
+            </lv_obj>
+            <lv_obj width="52" height="52" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_rbtn_main"/><lv_label text="▶" style_text_color="#FFFFFF" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_rbtn"/><lv_label text="▶▶" style_text_color="#ink" style_text_font="#font_sm" />
+            </lv_obj>
+          </lv_obj>
+        </lv_obj>
+      </lv_obj>
+
+      <!-- ===== 面部健康卡 ===== -->
+      <lv_obj width="276" height="content" flex_flow="column">
+        <style name="style_card"/>
+        <lv_obj flex_flow="row" width="100%" style_flex_cross_place="center" style_pad_hor="20" style_pad_top="18" style_pad_bottom="8" style_pad_column="12">
+          <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+            <style name="style_face"/>
+            <lv_label text="◉" style_text_color="#FFFFFF" style_text_font="#font_lg" />
+          </lv_obj>
+          <lv_obj flex_flow="column" height="content">
+            <lv_label text="面部健康" style_text_color="#ink" style_text_font="#font_lg" />
+            <lv_label text="AI 面部分析" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+          </lv_obj>
+        </lv_obj>
+        <lv_obj flex_flow="column" width="100%" height="content" style_pad_hor="20" style_pad_bottom="20">
+          <lv_obj width="content" height="content">
+            <style name="style_tag_green"/>
+            <lv_label text="✓ 状态良好" style_text_color="#up" style_text_font="#font_sm" />
+          </lv_obj>
+          <lv_obj flex_flow="row" width="100%" style_flex_cross_place="baseline" style_pad_top="16">
+            <lv_label text="92" style_text_color="#ink" style_text_font="#font_xl" />
+            <lv_label text=" 分 · 今日" style_text_color="#ink3" style_text_font="#font_sm" />
+          </lv_obj>
+          <lv_obj width="100%" height="content" style_pad_top="20">
+            <style name="style_btn_light"/>
+            <lv_label text="立即检测" style_text_color="0x0A0D12" style_text_font="#font_md" align="center" />
+          </lv_obj>
+        </lv_obj>
+      </lv_obj>
+
+      <!-- ===== 皮肤检测卡 ===== -->
+      <lv_obj width="276" height="content" flex_flow="column">
+        <style name="style_card"/>
+        <lv_obj flex_flow="row" width="100%" style_flex_cross_place="center" style_pad_hor="20" style_pad_top="18" style_pad_bottom="8" style_pad_column="12">
+          <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+            <style name="style_skin"/>
+            <lv_label text="◢" style_text_color="#FFFFFF" style_text_font="#font_lg" />
+          </lv_obj>
+          <lv_obj flex_flow="column" height="content">
+            <lv_label text="皮肤检测" style_text_color="#ink" style_text_font="#font_lg" />
+            <lv_label text="AI 肤质分析" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+          </lv_obj>
+        </lv_obj>
+        <lv_obj flex_flow="column" width="100%" height="content" style_pad_hor="20" style_pad_bottom="20">
+          <lv_obj width="content" height="content">
+            <style name="style_tag_rose"/>
+            <lv_label text="◢ 水润度 78%" style_text_color="#down" style_text_font="#font_sm" />
+          </lv_obj>
+          <lv_obj flex_flow="row" width="100%" style_flex_cross_place="baseline" style_pad_top="16">
+            <lv_label text="A-" style_text_color="#ink" style_text_font="#font_xl" />
+            <lv_label text=" 肤质等级" style_text_color="#ink3" style_text_font="#font_sm" />
+          </lv_obj>
+          <lv_obj width="100%" height="content" style_pad_top="20">
+            <style name="style_btn_light"/>
+            <lv_label text="立即检测" style_text_color="0x0A0D12" style_text_font="#font_md" align="center" />
+          </lv_obj>
+        </lv_obj>
+      </lv_obj>
+
+      <!-- ===== 天气卡 ===== -->
+      <lv_obj width="212" height="content" flex_flow="column">
+        <style name="style_card"/>
+        <lv_obj flex_flow="row" width="100%" style_flex_cross_place="center" style_pad_hor="20" style_pad_top="18" style_pad_bottom="8" style_pad_column="12">
+          <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+            <style name="style_wea"/>
+            <lv_label text="☀" style_text_color="#FFFFFF" style_text_font="#font_lg" />
+          </lv_obj>
+          <lv_obj flex_flow="column" height="content">
+            <lv_label text="天气" style_text_color="#ink" style_text_font="#font_lg" />
+            <lv_label text="今日" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+          </lv_obj>
+        </lv_obj>
+        <lv_obj flex_flow="column" width="100%" height="content" style_pad_hor="20" style_pad_bottom="20">
+          <lv_label text="26°" style_text_color="#ink" style_text_font="#font_xl" />
+          <lv_label text=" / 晴" style_text_color="#ink3" style_text_font="#font_sm" />
+          <lv_label text="明 21° 多云" style_text_color="#ink2" style_text_font="#font_sm" style_pad_top="10" />
+          <lv_label text="后 23° 小雨" style_text_color="#ink2" style_text_font="#font_sm" style_pad_top="4" />
+        </lv_obj>
+      </lv_obj>
+
+      <!-- ===== 日程卡 ===== -->
+      <lv_obj width="212" height="content" flex_flow="column">
+        <style name="style_card"/>
+        <lv_obj flex_flow="row" width="100%" style_flex_cross_place="center" style_pad_hor="20" style_pad_top="18" style_pad_bottom="8" style_pad_column="12">
+          <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+            <style name="style_cal"/>
+            <lv_label text="▤" style_text_color="#FFFFFF" style_text_font="#font_lg" />
+          </lv_obj>
+          <lv_obj flex_flow="column" height="content">
+            <lv_label text="日程" style_text_color="#ink" style_text_font="#font_lg" />
+            <lv_label text="今天" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+          </lv_obj>
+        </lv_obj>
+        <lv_obj flex_flow="column" width="100%" height="content" style_pad_hor="20" style_pad_bottom="20" style_pad_top="8">
+          <lv_label text="09:00  晨会" style_text_color="#ink2" style_text_font="#font_sm" />
+          <lv_label text="14:30  健身" style_text_color="#ink2" style_text_font="#font_sm" style_pad_top="8" />
+          <lv_label text="19:00  聚餐" style_text_color="#ink2" style_text_font="#font_sm" style_pad_top="8" />
+        </lv_obj>
+      </lv_obj>
+
+      <!-- ===== 资讯卡 ===== -->
+      <lv_obj width="212" height="content" flex_flow="column">
+        <style name="style_card"/>
+        <lv_obj flex_flow="row" width="100%" style_flex_cross_place="center" style_pad_hor="20" style_pad_top="18" style_pad_bottom="8" style_pad_column="12">
+          <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+            <style name="style_news"/>
+            <lv_label text="◈" style_text_color="#FFFFFF" style_text_font="#font_lg" />
+          </lv_obj>
+          <lv_obj flex_flow="column" height="content">
+            <lv_label text="资讯" style_text_color="#ink" style_text_font="#font_lg" />
+            <lv_label text="快讯" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+          </lv_obj>
+        </lv_obj>
+        <lv_obj flex_flow="column" width="100%" height="content" style_pad_hor="20" style_pad_bottom="20" style_pad_top="8">
+          <lv_label text="· 今日科技要闻" style_text_color="#ink2" style_text_font="#font_sm" />
+          <lv_label text="· 本地天气预警" style_text_color="#ink2" style_text_font="#font_sm" style_pad_top="8" />
+          <lv_label text="· 生活小贴士" style_text_color="#ink2" style_text_font="#font_sm" style_pad_top="8" />
+        </lv_obj>
+      </lv_obj>
+
+    </lv_obj>
+
+    <!-- ================= 小美助手栏 ================= -->
+    <lv_obj width="100%" height="content" style_pad_hor="30" style_pad_top="6" style_pad_bottom="24">
+      <lv_obj width="100%" height="content" flex_flow="row"
+              style_flex_cross_place="center" style_pad_column="18"
+              style_bg_color="#card_top" style_bg_opa="200"
+              style_border_color="#glass_brd" style_border_width="1" style_radius="20"
+              style_pad_hor="18" style_pad_ver="14"
+              style_shadow_width="18" style_shadow_opa="40" style_shadow_color="0x000000" style_shadow_offset_y="8">
+        <!-- 头像 -->
+        <lv_obj width="56" height="56" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+          <style name="style_ava"/>
+          <lv_label text="▮▮▮▮▮" style_text_color="#FFFFFF" style_text_font="#font_sm" />
+        </lv_obj>
+        <!-- 对话 -->
+        <lv_obj flex_flow="column" width="content" height="content" style_flex_grow="1" style_flex_main_place="start">
+          <lv_label text="小美同学 · 智能助手" style_text_color="#ink3" style_text_font="#font_sm" />
+          <lv_obj width="content" height="content" style_bg_color="#FFFFFF" style_bg_opa="40" style_border_color="#FFFFFF" style_border_opa="30" style_border_width="1" style_radius="13" style_pad_hor="14" style_pad_ver="9" style_margin_top="6">
+            <lv_label text="在呢～今天也要元气满满，有什么可以帮你的吗？" style_text_color="#ink" style_text_font="#font_md" />
+          </lv_obj>
+        </lv_obj>
+        <!-- 麦克风按钮 -->
+        <lv_obj width="50" height="50" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center"
+                style_bg_color="0x6F9EF2" style_bg_grad_color="0x7C3AED" style_bg_grad_dir="hor" style_radius="999"
+                style_shadow_width="14" style_shadow_opa="40" style_shadow_color="0x5A64F0">
+          <lv_label text="◙" style_text_color="#FFFFFF" style_text_font="#font_lg" />
+        </lv_obj>
+      </lv_obj>
+    </lv_obj>
+
+  </view>
+</screen>

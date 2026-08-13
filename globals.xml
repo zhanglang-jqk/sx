@@ -1,0 +1,85 @@
+<globals>
+	<api>
+		<!-- 无全局 enumdefs -->
+	</api>
+
+	<!-- ============ 全局配色（来自 home-v3.html / apps-v1.html） ============ -->
+	<consts>
+		<!-- 底色 -->
+		<color name="bg" value="0x06080C" />
+		<!-- 文字三级 -->
+		<color name="ink" value="0xECEEF3" />
+		<color name="ink2" value="0xA6ADBA" />
+		<color name="ink3" value="0x6B7383" />
+		<!-- 主题色 -->
+		<color name="aqua" value="0x7FD6CF" />
+		<color name="blue" value="0x5B9DD9" />
+		<color name="lilac" value="0x8B7CF6" />
+		<color name="amber" value="0xF2B76B" />
+		<color name="rose" value="0xF2909F" />
+		<color name="green" value="0x5EE6B8" />
+		<!-- 状态色 -->
+		<color name="up" value="0x79E6C8" />
+		<color name="down" value="0xF6A5BD" />
+		<color name="warn" value="0xF2C66B" />
+		<!-- 卡片玻璃面 -->
+		<color name="glass" value="0xFFFFFF" />
+		<color name="card_top" value="0x1A202A" />
+		<color name="card_bot" value="0x12161C" />
+		<!-- chip 渐变（每卡一个） -->
+		<color name="chip_face_a" value="0x2CC0A4" />
+		<color name="chip_face_b" value="0x3F86D8" />
+		<color name="chip_skin_a" value="0xC78CF0" />
+		<color name="chip_skin_b" value="0xF07CA0" />
+		<color name="chip_music_a" value="0xF07CA0" />
+		<color name="chip_music_b" value="0x8B7CF6" />
+		<color name="chip_kara_a" value="0xF2B76B" />
+		<color name="chip_kara_b" value="0xEF6A5E" />
+		<color name="chip_wea_a" value="0x5BB9D9" />
+		<color name="chip_wea_b" value="0x6F7CF0" />
+		<color name="chip_cal_a" value="0xF2C66B" />
+		<color name="chip_cal_b" value="0xE8963F" />
+		<color name="chip_new_a" value="0x3EC9B4" />
+		<color name="chip_new_b" value="0x2C9D9D" />
+		<!-- 浅色按钮 -->
+		<color name="btn_light_a" value="0xEEF1F6" />
+		<color name="btn_light_b" value="0xC6CCD8" />
+		<!-- 状态栏玻璃 -->
+		<color name="glass_brd" value="0x333A44" />
+	</consts>
+
+	<!-- ============ 中文字体（MiSans，含 ASCII + 常用中文 + 中文标点） ============ -->
+	<fonts>
+		<!-- 12px 正文/说明 -->
+		<bin name="font_sm" src_path="fonts/MiSans.ttf" size="12"
+		     range="0x20-0x7F 0x4E00-0x9FA5 0x3000-0x303F 0xFF00-0xFFEF 0x2600-0x26FF 0x25A0-0x25FF 0x2660-0x266F 0x2190-0x21FF 0x2300-0x23FF 0x00B7 0x00B0 0x2026 0x2022 0x203A 0x25B2 0x25BC" bpp="4" as_file="false" />
+		<!-- 14px 正文/卡片名 -->
+		<bin name="font_md" src_path="fonts/MiSans.ttf" size="14"
+		     range="0x20-0x7F 0x4E00-0x9FA5 0x3000-0x303F 0xFF00-0xFFEF 0x2600-0x26FF 0x25A0-0x25FF 0x2660-0x266F 0x2190-0x21FF 0x2300-0x23FF 0x00B7 0x00B0 0x2026 0x2022 0x203A 0x25B2 0x25BC" bpp="4" as_file="false" />
+		<!-- 16px 卡片标题/AppBar -->
+		<bin name="font_lg" src_path="fonts/MiSans.ttf" size="16"
+		     range="0x20-0x7F 0x4E00-0x9FA5 0x3000-0x303F 0xFF00-0xFFEF 0x2600-0x26FF 0x25A0-0x25FF 0x2660-0x266F 0x2190-0x21FF 0x2300-0x23FF 0x00B7 0x00B0 0x2026 0x2022 0x203A 0x25B2 0x25BC" bpp="4" as_file="false" />
+		<!-- 24px 大数字/时间 -->
+		<bin name="font_xl" src_path="fonts/MiSans.ttf" size="24"
+		     range="0x20-0x7F 0x4E00-0x9FA5 0x3000-0x303F 0xFF00-0xFFEF 0x2600-0x26FF 0x25A0-0x25FF 0x2660-0x266F 0x2190-0x21FF 0x2300-0x23FF 0x00B7 0x00B0 0x2026 0x2022 0x203A 0x25B2 0x25BC" bpp="4" as_file="false" />
+		<!-- 40px 状态栏时间 -->
+		<bin name="font_num" src_path="fonts/MiSans.ttf" size="40"
+		     range="0x20-0x7F 0x4E00-0x9FA5 0x3000-0x303F 0xFF00-0xFFEF 0x2600-0x26FF 0x25A0-0x25FF 0x2660-0x266F 0x2190-0x21FF 0x2300-0x23FF 0x00B7 0x00B0 0x2026 0x2022 0x203A 0x25B2 0x25BC" bpp="4" as_file="false" />
+	</fonts>
+
+	<!-- ============ 全局共享样式 ============ -->
+	<style name="style_card"
+	       bg_color="#card_top" bg_grad_color="#card_bot" bg_grad_dir="ver"
+	       border_color="#glass_brd" border_width="1" radius="20"
+	       shadow_width="18" shadow_opa="40" shadow_color="0x000000" shadow_offset_y="8" />
+
+	<!-- 玻璃卡片（浅色描边 + 半透明） -->
+	<style name="style_glass_card"
+	       bg_color="#card_top" bg_opa="200"
+	       border_color="#glass_brd" border_width="1" radius="20" />
+
+	<!-- 浅色主按钮（深字） -->
+	<style name="style_btn_light"
+	       bg_color="#btn_light_a" bg_grad_color="#btn_light_b" bg_grad_dir="hor"
+	       radius="14" text_color="0x0A0D12" />
+</globals>
