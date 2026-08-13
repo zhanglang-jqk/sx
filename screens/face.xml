@@ -14,11 +14,11 @@
     <!-- 关注 pill -->
     <style name="style_pill_warn" bg_color="0x3A3020" bg_opa="230" border_color="0x6A5A30" border_width="1" radius="20" pad_hor="13" pad_ver="5" />
     <!-- 指标条轨道 -->
-    <style name="style_m_bar" bg_color="#FFFFFF" bg_opa="40" radius="4" />
+    <style name="style_m_bar" bg_color="0xFFFFFF" bg_opa="40" radius="4" />
     <!-- 指标条填充 -->
     <style name="style_m_fill" bg_color="#aqua" bg_grad_color="#blue" bg_grad_dir="hor" radius="4" />
     <!-- 建议框 -->
-    <style name="style_advice" bg_color="#FFFFFF" bg_opa="40" border_color="#FFFFFF" border_opa="30" border_width="1" radius="16" pad_hor="18" pad_ver="14" />
+    <style name="style_advice" bg_color="0xFFFFFF" bg_opa="40" border_color="0xFFFFFF" border_opa="30" border_width="1" radius="16" pad_hor="18" pad_ver="14" />
     <!-- 重新检测按钮 -->
     <style name="style_rescan" bg_color="#btn_light_a" bg_grad_color="#btn_light_b" bg_grad_dir="hor" radius="14" pad_ver="12" />
   </styles>
@@ -56,7 +56,7 @@
         <!-- 扫描角标（四角） -->
         <lv_obj width="26" height="26" style_border_width="2" style_border_color="#green" style_border_side="left" style_border_opa="230" style_radius="6" />
         <!-- 脸部示意：圆脸 + 眼睛 -->
-        <lv_obj width="150" height="150" style_radius="999" style_bg_color="#FFFFFF" style_bg_opa="50" style_border_width="2" style_border_color="#8A90A0" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center" style_pad_column="20">
+        <lv_obj width="150" height="150" style_radius="999" style_bg_color="0xFFFFFF" style_bg_opa="50" style_border_width="2" style_border_color="0x8A90A0" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center" style_pad_column="20">
           <lv_obj width="10" height="10" style_radius="999" style_bg_color="#green" />
           <lv_obj width="10" height="10" style_radius="999" style_bg_color="#green" />
         </lv_obj>

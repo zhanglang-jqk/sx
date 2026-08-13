@@ -92,7 +92,7 @@
         <lv_obj flex_flow="row" width="100%" style_flex_cross_place="center" style_pad_hor="20" style_pad_top="18" style_pad_bottom="8" style_pad_column="12">
           <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
             <style name="style_music"/>
-            <lv_label text="♪" style_text_color="#FFFFFF" style_text_font="#font_lg" />
+            <lv_label text="♪" style_text_color="0xFFFFFF" style_text_font="#font_lg" />
           </lv_obj>
           <lv_obj flex_flow="column" height="content" style_flex_main_place="start">
             <lv_label text="音乐" style_text_color="#ink" style_text_font="#font_lg" />
@@ -119,7 +119,7 @@
               <style name="style_rbtn"/><lv_label text="◀◀" style_text_color="#ink" style_text_font="#font_sm" />
             </lv_obj>
             <lv_obj width="52" height="52" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
-              <style name="style_rbtn_main"/><lv_label text="▮▮" style_text_color="#FFFFFF" style_text_font="#font_md" />
+              <style name="style_rbtn_main"/><lv_label text="▮▮" style_text_color="0xFFFFFF" style_text_font="#font_md" />
             </lv_obj>
             <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
               <style name="style_rbtn"/><lv_label text="▶▶" style_text_color="#ink" style_text_font="#font_sm" />
@@ -134,7 +134,7 @@
         <lv_obj flex_flow="row" width="100%" style_flex_cross_place="center" style_pad_hor="20" style_pad_top="18" style_pad_bottom="8" style_pad_column="12">
           <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
             <style name="style_kara"/>
-            <lv_label text="♬" style_text_color="#FFFFFF" style_text_font="#font_lg" />
+            <lv_label text="♬" style_text_color="0xFFFFFF" style_text_font="#font_lg" />
           </lv_obj>
           <lv_obj flex_flow="column" height="content">
             <lv_label text="K 歌" style_text_color="#ink" style_text_font="#font_lg" />
@@ -152,7 +152,7 @@
               <style name="style_rbtn"/><lv_label text="◀◀" style_text_color="#ink" style_text_font="#font_sm" />
             </lv_obj>
             <lv_obj width="52" height="52" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
-              <style name="style_rbtn_main"/><lv_label text="▶" style_text_color="#FFFFFF" style_text_font="#font_md" />
+              <style name="style_rbtn_main"/><lv_label text="▶" style_text_color="0xFFFFFF" style_text_font="#font_md" />
             </lv_obj>
             <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
               <style name="style_rbtn"/><lv_label text="▶▶" style_text_color="#ink" style_text_font="#font_sm" />
@@ -167,7 +167,7 @@
         <lv_obj flex_flow="row" width="100%" style_flex_cross_place="center" style_pad_hor="20" style_pad_top="18" style_pad_bottom="8" style_pad_column="12">
           <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
             <style name="style_face"/>
-            <lv_label text="◉" style_text_color="#FFFFFF" style_text_font="#font_lg" />
+            <lv_label text="◉" style_text_color="0xFFFFFF" style_text_font="#font_lg" />
           </lv_obj>
           <lv_obj flex_flow="column" height="content">
             <lv_label text="面部健康" style_text_color="#ink" style_text_font="#font_lg" />
@@ -196,7 +196,7 @@
         <lv_obj flex_flow="row" width="100%" style_flex_cross_place="center" style_pad_hor="20" style_pad_top="18" style_pad_bottom="8" style_pad_column="12">
           <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
             <style name="style_skin"/>
-            <lv_label text="◢" style_text_color="#FFFFFF" style_text_font="#font_lg" />
+            <lv_label text="◢" style_text_color="0xFFFFFF" style_text_font="#font_lg" />
           </lv_obj>
           <lv_obj flex_flow="column" height="content">
             <lv_label text="皮肤检测" style_text_color="#ink" style_text_font="#font_lg" />
@@ -225,7 +225,7 @@
         <lv_obj flex_flow="row" width="100%" style_flex_cross_place="center" style_pad_hor="20" style_pad_top="18" style_pad_bottom="8" style_pad_column="12">
           <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
             <style name="style_wea"/>
-            <lv_label text="☀" style_text_color="#FFFFFF" style_text_font="#font_lg" />
+            <lv_label text="☀" style_text_color="0xFFFFFF" style_text_font="#font_lg" />
           </lv_obj>
           <lv_obj flex_flow="column" height="content">
             <lv_label text="天气" style_text_color="#ink" style_text_font="#font_lg" />
@@ -246,7 +246,7 @@
         <lv_obj flex_flow="row" width="100%" style_flex_cross_place="center" style_pad_hor="20" style_pad_top="18" style_pad_bottom="8" style_pad_column="12">
           <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
             <style name="style_cal"/>
-            <lv_label text="▤" style_text_color="#FFFFFF" style_text_font="#font_lg" />
+            <lv_label text="▤" style_text_color="0xFFFFFF" style_text_font="#font_lg" />
           </lv_obj>
           <lv_obj flex_flow="column" height="content">
             <lv_label text="日程" style_text_color="#ink" style_text_font="#font_lg" />
@@ -266,7 +266,7 @@
         <lv_obj flex_flow="row" width="100%" style_flex_cross_place="center" style_pad_hor="20" style_pad_top="18" style_pad_bottom="8" style_pad_column="12">
           <lv_obj width="44" height="44" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
             <style name="style_news"/>
-            <lv_label text="◈" style_text_color="#FFFFFF" style_text_font="#font_lg" />
+            <lv_label text="◈" style_text_color="0xFFFFFF" style_text_font="#font_lg" />
           </lv_obj>
           <lv_obj flex_flow="column" height="content">
             <lv_label text="资讯" style_text_color="#ink" style_text_font="#font_lg" />
@@ -293,12 +293,12 @@
         <!-- 头像 -->
         <lv_obj width="56" height="56" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
           <style name="style_ava"/>
-          <lv_label text="▮▮▮▮▮" style_text_color="#FFFFFF" style_text_font="#font_sm" />
+          <lv_label text="▮▮▮▮▮" style_text_color="0xFFFFFF" style_text_font="#font_sm" />
         </lv_obj>
         <!-- 对话 -->
         <lv_obj flex_flow="column" width="content" height="content" style_flex_grow="1" style_flex_main_place="start">
           <lv_label text="小美同学 · 智能助手" style_text_color="#ink3" style_text_font="#font_sm" />
-          <lv_obj width="content" height="content" style_bg_color="#FFFFFF" style_bg_opa="40" style_border_color="#FFFFFF" style_border_opa="30" style_border_width="1" style_radius="13" style_pad_hor="14" style_pad_ver="9" style_margin_top="6">
+          <lv_obj width="content" height="content" style_bg_color="0xFFFFFF" style_bg_opa="40" style_border_color="0xFFFFFF" style_border_opa="30" style_border_width="1" style_radius="13" style_pad_hor="14" style_pad_ver="9" style_margin_top="6">
             <lv_label text="在呢～今天也要元气满满，有什么可以帮你的吗？" style_text_color="#ink" style_text_font="#font_md" />
           </lv_obj>
         </lv_obj>
@@ -306,7 +306,7 @@
         <lv_obj width="50" height="50" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center"
                 style_bg_color="0x6F9EF2" style_bg_grad_color="0x7C3AED" style_bg_grad_dir="hor" style_radius="999"
                 style_shadow_width="14" style_shadow_opa="40" style_shadow_color="0x5A64F0">
-          <lv_label text="◙" style_text_color="#FFFFFF" style_text_font="#font_lg" />
+          <lv_label text="◙" style_text_color="0xFFFFFF" style_text_font="#font_lg" />
         </lv_obj>
       </lv_obj>
     </lv_obj>

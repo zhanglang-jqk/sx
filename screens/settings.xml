@@ -11,7 +11,7 @@
     <!-- 组标题 -->
     <style name="style_set_ttl" text_color="#ink3" text_font="#font_sm" text_letter_space="2" />
     <!-- 设置项图标块 -->
-    <style name="style_set_ic" bg_color="#FFFFFF" bg_opa="40" border_color="#FFFFFF" border_opa="35" border_width="1" radius="10" pad_all="8" />
+    <style name="style_set_ic" bg_color="0xFFFFFF" bg_opa="40" border_color="0xFFFFFF" border_opa="35" border_width="1" radius="10" pad_all="8" />
     <!-- 开关（LVGL 原生 switch，给指示条配色） -->
     <style name="style_switch_on" bg_color="#green" />
     <!-- 滑块指示条 -->
@@ -60,7 +60,7 @@
             <lv_label text="›" style_text_color="#ink3" style_text_font="#font_md" />
           </lv_obj>
           <!-- 蓝牙 -->
-          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="#FFFFFF" style_border_opa="30">
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="0xFFFFFF" style_border_opa="30">
             <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
               <style name="style_set_ic"/>
               <lv_label text="◒" style_text_color="#ink2" style_text_font="#font_md" />
@@ -91,7 +91,7 @@
             </lv_slider>
           </lv_obj>
           <!-- 音量 -->
-          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="#FFFFFF" style_border_opa="30">
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="0xFFFFFF" style_border_opa="30">
             <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
               <style name="style_set_ic"/>
               <lv_label text="♪" style_text_color="#ink2" style_text_font="#font_md" />
@@ -104,7 +104,7 @@
             </lv_slider>
           </lv_obj>
           <!-- 深色模式 -->
-          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="#FFFFFF" style_border_opa="30">
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="0xFFFFFF" style_border_opa="30">
             <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
               <style name="style_set_ic"/>
               <lv_label text="◐" style_text_color="#ink2" style_text_font="#font_md" />
@@ -143,7 +143,7 @@
             </lv_switch>
           </lv_obj>
           <!-- 唤醒词 -->
-          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="#FFFFFF" style_border_opa="30">
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="0xFFFFFF" style_border_opa="30">
             <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
               <style name="style_set_ic"/>
               <lv_label text="⌁" style_text_color="#ink2" style_text_font="#font_md" />
@@ -175,7 +175,7 @@
             </lv_switch>
           </lv_obj>
           <!-- 皮肤照片上云 -->
-          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="#FFFFFF" style_border_opa="30">
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="0xFFFFFF" style_border_opa="30">
             <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
               <style name="style_set_ic"/>
               <lv_label text="▣" style_text_color="#ink2" style_text_font="#font_md" />
@@ -189,7 +189,7 @@
             </lv_switch>
           </lv_obj>
           <!-- 清除健康数据 -->
-          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="#FFFFFF" style_border_opa="30">
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="0xFFFFFF" style_border_opa="30">
             <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
               <style name="style_set_ic"/>
               <lv_label text="▤" style_text_color="#ink2" style_text_font="#font_md" />
@@ -219,7 +219,7 @@
             <lv_label text="›" style_text_color="#ink3" style_text_font="#font_md" />
           </lv_obj>
           <!-- 检查更新 -->
-          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="#FFFFFF" style_border_opa="30">
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="0xFFFFFF" style_border_opa="30">
             <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
               <style name="style_set_ic"/>
               <lv_label text="▲" style_text_color="#ink2" style_text_font="#font_md" />
