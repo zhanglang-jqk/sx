@@ -23,7 +23,7 @@
     <style name="style_rescan" bg_color="#btn_light_a" bg_grad_color="#btn_light_b" bg_grad_dir="hor" radius="14" pad_ver="12" />
   </styles>
 
-  <view flex_flow="column" style_bg_color="#bg" width="100%" height="100%">
+  <view flex_flow="column" style_bg_color="#bg" style_bg_opa="cover" width="100%" height="100%">
 
     <!-- ================= AppBar ================= -->
     <lv_obj flex_flow="row" width="100%" height="70"
