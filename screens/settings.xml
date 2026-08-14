@@ -18,7 +18,7 @@
     <style name="style_slider_ind" bg_color="#aqua" bg_grad_color="#blue" bg_grad_dir="hor" />
   </styles>
 
-  <view flex_flow="column" style_bg_color="#bg" width="100%" height="100%">
+  <view flex_flow="column" style_bg_color="#bg" style_bg_opa="cover" width="100%" height="100%">
 
     <!-- ================= AppBar ================= -->
     <lv_obj flex_flow="row" width="100%" height="70"
