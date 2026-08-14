@@ -1,0 +1,119 @@
+<!--
+  智能镜 · 皮肤检测 (1280×800)
+  还原自 apps-v1.html 皮肤检测页
+-->
+<screen>
+  <styles>
+    <style name="style_iconbtn" bg_color="#card_top" bg_opa="180" border_color="#glass_brd" border_width="1" radius="12" pad_all="9" />
+    <style name="style_radar" bg_color="#card_top" bg_opa="200" border_color="#glass_brd" border_width="1" radius="22" />
+    <style name="style_skin_tag_water" bg_color="0x1A3A42" bg_opa="230" border_color="0x2A5A66" border_width="1" radius="20" pad_hor="13" pad_ver="5" />
+    <style name="style_skin_tag_oil" bg_color="0x3A3020" bg_opa="230" border_color="0x6A5A30" border_width="1" radius="20" pad_hor="13" pad_ver="5" />
+    <style name="style_skin_tag_sens" bg_color="0x3A2530" bg_opa="230" border_color="0x6A3A50" border_width="1" radius="20" pad_hor="13" pad_ver="5" />
+    <style name="style_sm_bar" bg_color="0xFFFFFF" bg_opa="40" radius="4" />
+    <style name="style_sm_fill_water" bg_color="#aqua" bg_grad_color="#blue" bg_grad_dir="hor" radius="4" />
+    <style name="style_sm_fill_oil" bg_color="#amber" bg_grad_color="#chip_cal_b" bg_grad_dir="hor" radius="4" />
+    <style name="style_sm_fill_pore" bg_color="0xC78CF0" bg_grad_color="#lilac" bg_grad_dir="hor" radius="4" />
+    <style name="style_sm_fill_acne" bg_color="0xF2909F" bg_grad_color="0xEF6A5E" bg_grad_dir="hor" radius="4" />
+    <style name="style_sm_fill_wrinkle" bg_color="#ink2" bg_grad_color="#ink3" bg_grad_dir="hor" radius="4" />
+    <style name="style_sm_fill_elastic" bg_color="0xF2A5BD" bg_grad_color="0xC78CF0" bg_grad_dir="hor" radius="4" />
+    <style name="style_skin_advice" bg_color="0xFFFFFF" bg_opa="40" border_color="0xFFFFFF" border_opa="30" border_width="1" radius="16" pad_hor="18" pad_ver="14" />
+  </styles>
+
+  <view flex_flow="column" style_bg_color="#bg" width="100%" height="100%">
+
+    <!-- ================= AppBar ================= -->
+    <lv_obj flex_flow="row" width="100%" height="70"
+            style_flex_cross_place="center" style_pad_column="14"
+            style_pad_hor="28" style_pad_top="16">
+      <lv_obj width="40" height="40" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+        <style name="style_iconbtn"/>
+        <lv_label text="‹" style_text_color="#ink" style_text_font="#font_lg" />
+      </lv_obj>
+      <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+        <lv_label text="皮肤检测" style_text_color="#ink" style_text_font="#font_lg" />
+        <lv_label text="AI 肤质分析" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="3" />
+      </lv_obj>
+      <lv_obj width="40" height="40" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+        <style name="style_iconbtn"/>
+        <lv_label text="⚙" style_text_color="#ink2" style_text_font="#font_lg" />
+      </lv_obj>
+    </lv_obj>
+
+    <!-- ================= 主体：雷达 + 结果 ================= -->
+    <lv_obj flex_flow="row" width="100%" height="content"
+            style_flex_cross_place="start" style_pad_column="24"
+            style_pad_hor="28" style_pad_top="8" style_pad_bottom="24">
+
+      <!-- ===== 左：雷达图 + 等级 ===== -->
+      <lv_obj width="46%" height="600" flex_flow="column"
+              style_flex_main_place="center" style_flex_cross_place="center" style_pad_row="14">
+        <style name="style_radar"/>
+
+        <!-- 雷达图示意：六边形 + 中心点 -->
+        <lv_obj width="240" height="240" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+          <style name="style_radar"/>
+          <!-- 六边形轮廓（用 border） -->
+          <lv_obj width="180" height="180" style_radius="999" style_border_width="2" style_border_color="#rose" style_border_opa="180" style_bg_color="#rose" style_bg_opa="30" />
+        </lv_obj>
+
+        <lv_label text="A-" style_text_color="#rose" style_text_font="#font_xl" style_pad_top="20" />
+        <lv_label text="肤质等级" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="4" />
+      </lv_obj>
+
+      <!-- ===== 右：结果 ===== -->
+      <lv_obj flex_flow="column" width="54%" height="content" style_flex_grow="1">
+
+        <!-- 肤质标签 -->
+        <lv_obj flex_flow="row" width="100%" height="content" style_pad_column="8" style_pad_bottom="14">
+          <lv_obj width="content" height="content"><style name="style_skin_tag_water"/><lv_label text="◢ 水润型" style_text_color="#aqua" style_text_font="#font_sm" /></lv_obj>
+          <lv_obj width="content" height="content"><style name="style_skin_tag_oil"/><lv_label text="轻度 T 区出油" style_text_color="#warn" style_text_font="#font_sm" /></lv_obj>
+          <lv_obj width="content" height="content"><style name="style_skin_tag_sens"/><lv_label text="敏感度低" style_text_color="#down" style_text_font="#font_sm" /></lv_obj>
+        </lv_obj>
+
+        <!-- 指标列表 -->
+        <lv_obj flex_flow="column" width="100%" height="content" style_pad_top="8" style_pad_row="13">
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="12">
+            <lv_label text="水分" width="60" style_text_color="#ink2" style_text_font="#font_md" />
+            <lv_obj width="content" height="7" style_flex_grow="1"><style name="style_sm_bar"/><lv_obj width="78%" height="100%"><style name="style_sm_fill_water"/></lv_obj></lv_obj>
+            <lv_label text="78%" width="56" style_text_color="#ink" style_text_font="#font_md" style_text_align="right" />
+          </lv_obj>
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="12">
+            <lv_label text="油分" width="60" style_text_color="#ink2" style_text_font="#font_md" />
+            <lv_obj width="content" height="7" style_flex_grow="1"><style name="style_sm_bar"/><lv_obj width="34%" height="100%"><style name="style_sm_fill_oil"/></lv_obj></lv_obj>
+            <lv_label text="34%" width="56" style_text_color="#ink" style_text_font="#font_md" style_text_align="right" />
+          </lv_obj>
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="12">
+            <lv_label text="毛孔" width="60" style_text_color="#ink2" style_text_font="#font_md" />
+            <lv_obj width="content" height="7" style_flex_grow="1"><style name="style_sm_bar"/><lv_obj width="28%" height="100%"><style name="style_sm_fill_pore"/></lv_obj></lv_obj>
+            <lv_label text="细腻" width="56" style_text_color="#ink" style_text_font="#font_md" style_text_align="right" />
+          </lv_obj>
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="12">
+            <lv_label text="痘痘" width="60" style_text_color="#ink2" style_text_font="#font_md" />
+            <lv_obj width="content" height="7" style_flex_grow="1"><style name="style_sm_bar"/><lv_obj width="12%" height="100%"><style name="style_sm_fill_acne"/></lv_obj></lv_obj>
+            <lv_label text="极少" width="56" style_text_color="#ink" style_text_font="#font_md" style_text_align="right" />
+          </lv_obj>
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="12">
+            <lv_label text="皱纹" width="60" style_text_color="#ink2" style_text_font="#font_md" />
+            <lv_obj width="content" height="7" style_flex_grow="1"><style name="style_sm_bar"/><lv_obj width="20%" height="100%"><style name="style_sm_fill_wrinkle"/></lv_obj></lv_obj>
+            <lv_label text="轻微" width="56" style_text_color="#ink" style_text_font="#font_md" style_text_align="right" />
+          </lv_obj>
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="12">
+            <lv_label text="弹性" width="60" style_text_color="#ink2" style_text_font="#font_md" />
+            <lv_obj width="content" height="7" style_flex_grow="1"><style name="style_sm_bar"/><lv_obj width="74%" height="100%"><style name="style_sm_fill_elastic"/></lv_obj></lv_obj>
+            <lv_label text="良好" width="56" style_text_color="#ink" style_text_font="#font_md" style_text_align="right" />
+          </lv_obj>
+        </lv_obj>
+
+        <!-- 建议 -->
+        <lv_obj width="100%" height="content" style_pad_top="20">
+          <style name="style_skin_advice"/>
+          <lv_label text="小美建议：皮肤水润度不错，但 T 区轻度出油。建议用温和洁面，加强补水，外出注意防晒哦～"
+                    style_text_color="#ink2" style_text_font="#font_sm" />
+        </lv_obj>
+
+      </lv_obj>
+
+    </lv_obj>
+
+  </view>
+</screen>
