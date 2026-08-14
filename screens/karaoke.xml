@@ -1,0 +1,95 @@
+<!--
+  智能镜 · K歌 (1280×800)
+  还原自 apps-v1.html K歌页
+-->
+<screen>
+  <styles>
+    <style name="style_iconbtn" bg_color="#card_top" bg_opa="180" border_color="#glass_brd" border_width="1" radius="12" pad_all="9" />
+    <style name="style_modebtn" bg_color="#card_top" bg_opa="180" border_color="#glass_brd" border_width="1" radius="18" pad_hor="18" pad_ver="6" />
+    <style name="style_modebtn_active" bg_color="#chip_kara_a" bg_grad_color="#chip_kara_b" bg_grad_dir="hor" radius="18" pad_hor="18" pad_ver="6" />
+    <style name="style_rbtn" bg_color="#card_top" bg_opa="180" border_color="#glass_brd" border_width="1" radius="999" pad_all="10" />
+    <style name="style_rbtn_main" bg_color="#chip_kara_a" bg_grad_color="#chip_kara_b" bg_grad_dir="hor" radius="999" pad_all="12" />
+  </styles>
+
+  <view flex_flow="column" style_bg_color="#bg" width="100%" height="100%">
+
+    <!-- ================= AppBar ================= -->
+    <lv_obj flex_flow="row" width="100%" height="70"
+            style_flex_cross_place="center" style_pad_column="14"
+            style_pad_hor="28" style_pad_top="16">
+      <lv_obj width="40" height="40" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+        <style name="style_iconbtn"/>
+        <lv_label text="‹" style_text_color="#ink" style_text_font="#font_lg" />
+      </lv_obj>
+      <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+        <lv_label text="K 歌" style_text_color="#ink" style_text_font="#font_lg" />
+        <lv_label text="晴天 · 周杰伦" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="3" />
+      </lv_obj>
+      <lv_obj width="40" height="40" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+        <style name="style_iconbtn"/>
+        <lv_label text="⚙" style_text_color="#ink2" style_text_font="#font_lg" />
+      </lv_obj>
+    </lv_obj>
+
+    <!-- ================= 主体：垂直 ================= -->
+    <lv_obj flex_flow="column" width="100%" height="content"
+            style_flex_grow="1" style_flex_cross_place="center"
+            style_pad_hor="40" style_pad_top="4">
+
+      <!-- 模式切换 -->
+      <lv_obj flex_flow="row" width="100%" height="content" style_flex_main_place="center" style_flex_cross_place="center" style_pad_column="10">
+        <lv_obj width="content" height="content"><style name="style_modebtn_active"/><lv_label text="伴奏" style_text_color="0x0A0D12" style_text_font="#font_sm" /></lv_obj>
+        <lv_obj width="content" height="content"><style name="style_modebtn"/><lv_label text="原唱" style_text_color="#ink2" style_text_font="#font_sm" /></lv_obj>
+        <lv_obj width="content" height="content"><style name="style_modebtn"/><lv_label text="调音" style_text_color="#ink2" style_text_font="#font_sm" /></lv_obj>
+      </lv_obj>
+
+      <!-- 歌词 -->
+      <lv_obj flex_flow="column" width="100%" height="content" style_flex_grow="1"
+              style_flex_main_place="center" style_flex_cross_place="center" style_pad_row="14" style_pad_top="30">
+        <lv_label text="故事的小黄花 从出生那年就飘着" style_text_color="#ink3" style_text_font="#font_lg" />
+        <lv_label text="童年的荡秋千 随记忆一直晃到现在" style_text_color="#ink3" style_text_font="#font_lg" />
+        <lv_label text="Re So So Si Do Si La So La" style_text_color="#amber" style_text_font="#font_xl" style_pad_top="10" />
+        <lv_label text="Si Si Si Si La Si La So" style_text_color="#ink2" style_text_font="#font_lg" style_pad_top="10" />
+        <lv_label text="吹着前奏望着天空 我想起花瓣试着掉落" style_text_color="#ink2" style_text_font="#font_lg" style_pad_top="10" />
+      </lv_obj>
+
+      <!-- 进度条 -->
+      <lv_obj width="90%" height="content" style_pad_top="10">
+        <lv_obj width="100%" height="5" style_radius="3" style_bg_color="0xFFFFFF" style_bg_opa="40">
+          <lv_obj width="36%" height="100%" style_radius="3" style_bg_color="#chip_kara_a" style_bg_grad_color="#chip_kara_b" style_bg_grad_dir="hor" />
+        </lv_obj>
+        <lv_obj flex_flow="row" width="100%" style_flex_main_place="space_between" style_pad_top="7">
+          <lv_label text="1:42" style_text_color="#ink3" style_text_font="#font_sm" />
+          <lv_label text="4:26" style_text_color="#ink3" style_text_font="#font_sm" />
+        </lv_obj>
+      </lv_obj>
+
+      <!-- 控制 + 评分 -->
+      <lv_obj flex_flow="row" width="100%" height="content" style_flex_main_place="center" style_flex_cross_place="center" style_pad_top="14" style_pad_column="24">
+        <lv_obj width="50" height="50" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+          <style name="style_rbtn"/><lv_label text="◀◀" style_text_color="#ink" style_text_font="#font_md" />
+        </lv_obj>
+        <lv_obj width="64" height="64" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+          <style name="style_rbtn_main"/><lv_label text="▶" style_text_color="0xFFFFFF" style_text_font="#font_lg" />
+        </lv_obj>
+        <lv_obj width="50" height="50" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+          <style name="style_rbtn"/><lv_label text="▶▶" style_text_color="#ink" style_text_font="#font_md" />
+        </lv_obj>
+        <!-- 评分 -->
+        <lv_obj flex_flow="row" width="content" height="content" style_flex_cross_place="center" style_pad_column="10" style_margin_left="20">
+          <lv_obj flex_flow="row" width="content" height="26" style_flex_cross_place="center" style_pad_column="3">
+            <lv_obj width="3" height="8" style_radius="2" style_bg_color="#amber" />
+            <lv_obj width="3" height="16" style_radius="2" style_bg_color="#amber" />
+            <lv_obj width="3" height="22" style_radius="2" style_bg_color="#amber" />
+            <lv_obj width="3" height="12" style_radius="2" style_bg_color="#amber" />
+            <lv_obj width="3" height="18" style_radius="2" style_bg_color="#amber" />
+            <lv_obj width="3" height="9" style_radius="2" style_bg_color="#amber" />
+          </lv_obj>
+          <lv_label text="96" style_text_color="#amber" style_text_font="#font_lg" />
+        </lv_obj>
+      </lv_obj>
+
+    </lv_obj>
+
+  </view>
+</screen>
