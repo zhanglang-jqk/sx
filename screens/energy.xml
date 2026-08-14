@@ -1,0 +1,143 @@
+<!--
+  智能镜 · 每日能量 (1280×800)
+  还原自 apps-v1.html 每日能量页
+-->
+<screen>
+  <styles>
+    <style name="style_iconbtn" bg_color="#card_top" bg_opa="180" border_color="#glass_brd" border_width="1" radius="12" pad_all="9" />
+    <style name="style_set_group" bg_color="#card_top" bg_opa="200" border_color="#glass_brd" border_width="1" radius="18" />
+    <style name="style_set_ic" bg_color="0xFFFFFF" bg_opa="40" border_color="0xFFFFFF" border_opa="35" border_width="1" radius="10" pad_all="8" />
+    <style name="style_switch_on" bg_color="#green" />
+    <style name="style_timeinput" bg_color="0x000000" bg_opa="80" border_color="0xFFFFFF" border_opa="40" border_width="1" radius="11" pad_hor="11" pad_ver="7" />
+    <style name="style_energy_card" bg_color="#card_top" bg_opa="200" border_color="#glass_brd" border_width="1" radius="20" pad_all="30" />
+    <style name="style_energy_ava" bg_color="0xF6C26B" bg_grad_color="0xEF6A5E" bg_grad_dir="hor" radius="24" />
+    <style name="style_energy_bubble" bg_color="0xFFFFFF" bg_opa="40" border_color="0xFFFFFF" border_opa="30" border_width="1" radius="16" pad_hor="22" pad_ver="15" />
+    <style name="style_toolchip" bg_color="#card_top" bg_opa="180" border_color="#glass_brd" border_width="1" radius="12" pad_ver="9" />
+    <style name="style_toolchip_active" bg_color="#aqua" bg_grad_color="#blue" bg_grad_dir="hor" radius="12" pad_ver="9" />
+  </styles>
+
+  <view flex_flow="column" style_bg_color="#bg" width="100%" height="100%">
+
+    <!-- ================= AppBar ================= -->
+    <lv_obj flex_flow="row" width="100%" height="70"
+            style_flex_cross_place="center" style_pad_column="14"
+            style_pad_hor="28" style_pad_top="16">
+      <lv_obj width="40" height="40" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+        <style name="style_iconbtn"/>
+        <lv_label text="‹" style_text_color="#ink" style_text_font="#font_lg" />
+      </lv_obj>
+      <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+        <lv_label text="每日能量" style_text_color="#ink" style_text_font="#font_lg" />
+        <lv_label text="智能问候 · 元气满满" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="3" />
+      </lv_obj>
+      <lv_obj width="40" height="40" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+        <style name="style_iconbtn"/>
+        <lv_label text="⚙" style_text_color="#ink2" style_text_font="#font_lg" />
+      </lv_obj>
+    </lv_obj>
+
+    <!-- ================= 主体：左配置 + 右状态 ================= -->
+    <lv_obj flex_flow="row" width="100%" height="content"
+            style_flex_cross_place="start" style_pad_column="22"
+            style_pad_hor="28" style_pad_top="8" style_pad_bottom="24">
+
+      <!-- ===== 左：配置 ===== -->
+      <lv_obj flex_flow="column" width="50%" height="content" style_flex_grow="1" style_pad_row="16">
+
+        <!-- 检测时间段 -->
+        <lv_obj flex_flow="column" width="100%" height="content">
+          <style name="style_set_group"/>
+          <lv_label text="检测时间段" style_text_color="#ink3" style_text_font="#font_sm" style_pad_hor="20" style_pad_top="13" style_pad_bottom="9" />
+          <!-- 早晨洗漱 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="◉" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="早晨洗漱" style_text_color="#ink" style_text_font="#font_md" />
+              <lv_label text="检测到人时自动播报" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+            </lv_obj>
+            <lv_obj width="content" height="content"><style name="style_timeinput"/><lv_label text="07:30" style_text_color="#ink" style_text_font="#font_md" /></lv_obj>
+            <lv_switch checked="true"><style name="style_switch_on" selector="indicator|checked"/></lv_switch>
+          </lv_obj>
+          <!-- 晚间洗漱 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="0xFFFFFF" style_border_opa="30">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="◉" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="晚间洗漱" style_text_color="#ink" style_text_font="#font_md" />
+              <lv_label text="检测到人时自动播报" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+            </lv_obj>
+            <lv_obj width="content" height="content"><style name="style_timeinput"/><lv_label text="22:30" style_text_color="#ink" style_text_font="#font_md" /></lv_obj>
+            <lv_switch checked="true"><style name="style_switch_on" selector="indicator|checked"/></lv_switch>
+          </lv_obj>
+          <!-- 自定义时间段 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="0xFFFFFF" style_border_opa="30">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="◉" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="自定义时间段" style_text_color="#ink" style_text_font="#font_md" />
+              <lv_label text="检测到人时自动播报" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+            </lv_obj>
+            <lv_obj width="content" height="content"><style name="style_timeinput"/><lv_label text="13:00" style_text_color="#ink" style_text_font="#font_md" /></lv_obj>
+            <lv_switch><style name="style_switch_on" selector="indicator|checked"/></lv_switch>
+          </lv_obj>
+        </lv_obj>
+
+        <!-- 内容偏好 -->
+        <lv_obj flex_flow="column" width="100%" height="content">
+          <style name="style_set_group"/>
+          <lv_label text="内容偏好" style_text_color="#ink3" style_text_font="#font_sm" style_pad_hor="20" style_pad_top="13" style_pad_bottom="9" />
+          <lv_obj flex_flow="row" width="100%" height="content" style_pad_column="14" style_pad_hor="20" style_pad_ver="12">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="◈" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="播报风格" style_text_color="#ink" style_text_font="#font_md" />
+            </lv_obj>
+          </lv_obj>
+          <lv_obj flex_flow="row" width="100%" height="content" style_pad_column="8" style_pad_hor="20" style_pad_bottom="16">
+            <lv_obj flex_flow="row" width="content" height="content" style_flex_grow="1" style_flex_main_place="center"><style name="style_toolchip_active"/><lv_label text="夸奖" style_text_color="0x0A0D12" style_text_font="#font_sm" /></lv_obj>
+            <lv_obj flex_flow="row" width="content" height="content" style_flex_grow="1" style_flex_main_place="center"><style name="style_toolchip"/><lv_label text="笑话" style_text_color="#ink2" style_text_font="#font_sm" /></lv_obj>
+            <lv_obj flex_flow="row" width="content" height="content" style_flex_grow="1" style_flex_main_place="center"><style name="style_toolchip"/><lv_label text="混合" style_text_color="#ink2" style_text_font="#font_sm" /></lv_obj>
+          </lv_obj>
+        </lv_obj>
+
+      </lv_obj>
+
+      <!-- ===== 右：能量状态卡 ===== -->
+      <lv_obj width="50%" height="content" style_flex_grow="1" flex_flow="column"
+              style_flex_main_place="center" style_flex_cross_place="center" style_pad_row="18">
+        <style name="style_energy_card"/>
+
+        <!-- 能量头像（声波条） -->
+        <lv_obj width="78" height="78" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+          <style name="style_energy_ava"/>
+          <lv_obj flex_flow="row" width="content" height="26" style_flex_cross_place="center" style_pad_column="3">
+            <lv_obj width="3" height="12" style_radius="2" style_bg_color="0xFFFFFF" />
+            <lv_obj width="3" height="24" style_radius="2" style_bg_color="0xFFFFFF" />
+            <lv_obj width="3" height="10" style_radius="2" style_bg_color="0xFFFFFF" />
+            <lv_obj width="3" height="19" style_radius="2" style_bg_color="0xFFFFFF" />
+            <lv_obj width="3" height="8" style_radius="2" style_bg_color="0xFFFFFF" />
+          </lv_obj>
+        </lv_obj>
+
+        <!-- 气泡 -->
+        <lv_obj width="content" height="content" style_margin_top="18">
+          <style name="style_energy_bubble"/>
+          <lv_label text="早上好～今天气色真好，笑容也超有感染力！" style_text_color="#ink" style_text_font="#font_md" />
+        </lv_obj>
+
+        <lv_label text="检测到你在镜子前 · 云端生成" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="16" />
+      </lv_obj>
+
+    </lv_obj>
+
+  </view>
+</screen>
