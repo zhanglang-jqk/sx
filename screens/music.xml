@@ -1,0 +1,85 @@
+<!--
+  智能镜 · 音乐 (1280×800)
+  还原自 apps-v1.html 音乐页
+-->
+<screen>
+  <styles>
+    <style name="style_iconbtn" bg_color="#card_top" bg_opa="180" border_color="#glass_brd" border_width="1" radius="12" pad_all="9" />
+    <style name="style_rbtn" bg_color="#card_top" bg_opa="180" border_color="#glass_brd" border_width="1" radius="999" pad_all="10" />
+    <style name="style_rbtn_main" bg_color="#chip_music_a" bg_grad_color="#lilac" bg_grad_dir="hor" radius="999" pad_all="12" />
+    <style name="style_foottab" bg_color="#card_top" bg_opa="180" border_color="#glass_brd" border_width="1" radius="18" pad_hor="16" pad_ver="6" />
+  </styles>
+
+  <view flex_flow="column" style_bg_color="#bg" width="100%" height="100%">
+
+    <!-- ================= AppBar ================= -->
+    <lv_obj flex_flow="row" width="100%" height="70"
+            style_flex_cross_place="center" style_pad_column="14"
+            style_pad_hor="28" style_pad_top="16">
+      <lv_obj width="40" height="40" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+        <style name="style_iconbtn"/>
+        <lv_label text="‹" style_text_color="#ink" style_text_font="#font_lg" />
+      </lv_obj>
+      <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+        <lv_label text="音乐" style_text_color="#ink" style_text_font="#font_lg" />
+        <lv_label text="正在播放" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="3" />
+      </lv_obj>
+      <lv_obj width="40" height="40" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+        <style name="style_iconbtn"/>
+        <lv_label text="⚙" style_text_color="#ink2" style_text_font="#font_lg" />
+      </lv_obj>
+    </lv_obj>
+
+    <!-- ================= 主体：居中 ================= -->
+    <lv_obj flex_flow="column" width="100%" height="content"
+            style_flex_grow="1" style_flex_main_place="center" style_flex_cross_place="center"
+            style_pad_row="6">
+
+      <!-- 封面（旋转圆盘） -->
+      <lv_obj width="220" height="220" style_radius="999"
+              style_bg_color="#chip_music_a" style_bg_grad_color="#lilac" style_bg_grad_dir="hor"
+              style_border_width="1" style_border_color="0xFFFFFF" style_border_opa="60"
+              style_shadow_width="26" style_shadow_opa="60" style_shadow_color="0x9670C8"
+              flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center"
+              style_margin_bottom="10">
+        <lv_obj width="80" height="80" style_radius="999" style_bg_color="#bg" style_border_width="1" style_border_color="0xFFFFFF" style_border_opa="40" />
+      </lv_obj>
+
+      <lv_label text="晴天" style_text_color="#ink" style_text_font="#font_lg" style_pad_top="14" />
+      <lv_label text="周杰伦 · 叶惠美" style_text_color="#ink3" style_text_font="#font_md" style_pad_top="6" />
+
+      <!-- 进度条 -->
+      <lv_obj width="70%" height="content" style_pad_top="20">
+        <lv_obj width="100%" height="6" style_radius="3" style_bg_color="0xFFFFFF" style_bg_opa="40">
+          <lv_obj width="42%" height="100%" style_radius="3" style_bg_color="#chip_music_a" style_bg_grad_color="#lilac" style_bg_grad_dir="hor" />
+        </lv_obj>
+        <lv_obj flex_flow="row" width="100%" style_flex_main_place="space_between" style_pad_top="8">
+          <lv_label text="1:42" style_text_color="#ink3" style_text_font="#font_sm" />
+          <lv_label text="4:26" style_text_color="#ink3" style_text_font="#font_sm" />
+        </lv_obj>
+      </lv_obj>
+
+      <!-- 控制按钮 -->
+      <lv_obj flex_flow="row" width="100%" height="content" style_flex_main_place="center" style_flex_cross_place="center" style_pad_top="16" style_pad_column="26">
+        <lv_obj width="50" height="50" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+          <style name="style_rbtn"/><lv_label text="◀◀" style_text_color="#ink" style_text_font="#font_md" />
+        </lv_obj>
+        <lv_obj width="64" height="64" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+          <style name="style_rbtn_main"/><lv_label text="▮▮" style_text_color="0xFFFFFF" style_text_font="#font_lg" />
+        </lv_obj>
+        <lv_obj width="50" height="50" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+          <style name="style_rbtn"/><lv_label text="▶▶" style_text_color="#ink" style_text_font="#font_md" />
+        </lv_obj>
+      </lv_obj>
+
+      <!-- 底部 Tab -->
+      <lv_obj flex_flow="row" width="100%" height="content" style_flex_main_place="center" style_flex_cross_place="center" style_pad_top="20" style_pad_column="8">
+        <lv_obj width="content" height="content"><style name="style_foottab"/><lv_label text="播放列表" style_text_color="#ink" style_text_font="#font_sm" /></lv_obj>
+        <lv_obj width="content" height="content"><style name="style_foottab"/><lv_label text="歌词" style_text_color="#ink3" style_text_font="#font_sm" /></lv_obj>
+        <lv_obj width="content" height="content"><style name="style_foottab"/><lv_label text="音质" style_text_color="#ink3" style_text_font="#font_sm" /></lv_obj>
+      </lv_obj>
+
+    </lv_obj>
+
+  </view>
+</screen>
