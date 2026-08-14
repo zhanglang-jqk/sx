@@ -31,3 +31,4 @@
 - 界面还原自 HTML 设计稿（home-v3.html / apps-v1.html）。
 - 毛玻璃/复杂渐变/SVG 图标等用 LVGL 能力近似（半透明、线性渐变、符号文字）。
 - 中文字体 MiSans 需要 `fonts/` 目录存在，否则中文不显示。
+- 数字/时间用 Outfit Thin（超细字重），还原 HTML 的 Outfit 200/300 设计。
