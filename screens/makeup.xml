@@ -59,11 +59,11 @@
         <lv_obj flex_flow="row" width="100%" height="content" style_pad_column="10">
           <lv_obj flex_flow="row" width="content" height="content" style_flex_grow="1" style_flex_main_place="center">
             <style name="style_btn_ghost"/>
-            <lv_label text="📷 拍摄" style_text_color="#ink2" style_text_font="#font_md" />
+            <lv_label text="拍摄" style_text_color="#ink2" style_text_font="#font_md" />
           </lv_obj>
           <lv_obj flex_flow="row" width="content" height="content" style_flex_grow="1" style_flex_main_place="center">
             <style name="style_btn_primary"/>
-            <lv_label text="✨ 生成效果" style_text_color="0x0A0D12" style_text_font="#font_md" />
+            <lv_label text="生成效果" style_text_color="0x0A0D12" style_text_font="#font_md" />
           </lv_obj>
         </lv_obj>
       </lv_obj>
@@ -73,8 +73,8 @@
 
         <!-- 模式 Tab -->
         <lv_obj flex_flow="row" width="100%" height="content" style_pad_column="8" style_pad_bottom="14">
-          <lv_obj flex_flow="row" width="content" height="content" style_flex_grow="1" style_flex_main_place="center"><style name="style_mtab_active"/><lv_label text="💄 仿妆" style_text_color="0x0A0D12" style_text_font="#font_sm" /></lv_obj>
-          <lv_obj flex_flow="row" width="content" height="content" style_flex_grow="1" style_flex_main_place="center"><style name="style_mtab"/><lv_label text="💇 发型" style_text_color="#ink2" style_text_font="#font_sm" /></lv_obj>
+          <lv_obj flex_flow="row" width="content" height="content" style_flex_grow="1" style_flex_main_place="center"><style name="style_mtab_active"/><lv_label text="仿妆" style_text_color="0x0A0D12" style_text_font="#font_sm" /></lv_obj>
+          <lv_obj flex_flow="row" width="content" height="content" style_flex_grow="1" style_flex_main_place="center"><style name="style_mtab"/><lv_label text="发型" style_text_color="#ink2" style_text_font="#font_sm" /></lv_obj>
         </lv_obj>
 
         <!-- 模板网格（3 列 × 2 行） -->
