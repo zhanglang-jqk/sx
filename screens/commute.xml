@@ -1,0 +1,188 @@
+<!--
+  智能镜 · 通勤 (1280×800)
+  还原自 apps-v1.html 通勤页
+-->
+<screen>
+  <styles>
+    <style name="style_iconbtn" bg_color="#card_top" bg_opa="180" border_color="#glass_brd" border_width="1" radius="12" pad_all="9" />
+    <style name="style_set_group" bg_color="#card_top" bg_opa="200" border_color="#glass_brd" border_width="1" radius="18" />
+    <style name="style_set_ic" bg_color="0xFFFFFF" bg_opa="40" border_color="0xFFFFFF" border_opa="35" border_width="1" radius="10" pad_all="8" />
+    <style name="style_toolbtn" bg_color="#card_top" bg_opa="180" border_color="#glass_brd" border_width="1" radius="12" pad_ver="9" />
+    <style name="style_toolbtn_active" bg_color="#aqua" bg_grad_color="#blue" bg_grad_dir="hor" radius="12" pad_ver="9" />
+    <style name="style_route_card" bg_color="#card_top" bg_opa="200" border_color="#glass_brd" border_width="1" radius="18" pad_all="18" />
+    <style name="style_jam_mid" bg_color="0x3A3020" bg_opa="230" border_color="0x6A5A30" border_width="1" radius="16" pad_hor="12" pad_ver="4" />
+  </styles>
+
+  <view flex_flow="column" style_bg_color="#bg" width="100%" height="100%">
+
+    <!-- ================= AppBar ================= -->
+    <lv_obj flex_flow="row" width="100%" height="70"
+            style_flex_cross_place="center" style_pad_column="14"
+            style_pad_hor="28" style_pad_top="16">
+      <lv_obj width="40" height="40" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+        <style name="style_iconbtn"/>
+        <lv_label text="‹" style_text_color="#ink" style_text_font="#font_lg" />
+      </lv_obj>
+      <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+        <lv_label text="通勤" style_text_color="#ink" style_text_font="#font_lg" />
+        <lv_label text="高德地图 · 实时路况" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="3" />
+      </lv_obj>
+      <lv_obj width="40" height="40" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+        <style name="style_iconbtn"/>
+        <lv_label text="⚙" style_text_color="#ink2" style_text_font="#font_lg" />
+      </lv_obj>
+    </lv_obj>
+
+    <!-- ================= 主体：左地图 + 右面板 ================= -->
+    <lv_obj flex_flow="row" width="100%" height="content"
+            style_flex_cross_place="start" style_pad_column="22"
+            style_pad_hor="28" style_pad_top="8" style_pad_bottom="24">
+
+      <!-- ===== 左：地图 ===== -->
+      <lv_obj width="58%" height="content" flex_flow="column"
+              style_bg_color="0x0D141C" style_bg_opa="230" style_border_color="#glass_brd" style_border_width="1" style_radius="20"
+              style_shadow_width="18" style_shadow_opa="40" style_shadow_color="0x000000" style_shadow_offset_y="8">
+
+        <!-- 搜索工具栏 -->
+        <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="10" style_pad_hor="14" style_pad_ver="12">
+          <lv_obj flex_flow="row" width="content" height="38" style_flex_grow="1" style_flex_cross_place="center"
+                  style_bg_color="0x000000" style_bg_opa="90" style_border_color="0xFFFFFF" style_border_opa="40" style_border_width="1" style_radius="19"
+                  style_pad_hor="16">
+            <lv_label text="搜索地点" style_text_color="#ink3" style_text_font="#font_sm" />
+          </lv_obj>
+          <lv_obj width="38" height="38" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+            <style name="style_iconbtn"/>
+            <lv_label text="◉" style_text_color="#ink2" style_text_font="#font_md" />
+          </lv_obj>
+        </lv_obj>
+
+        <!-- 地图示意（色块） -->
+        <lv_obj width="100%" height="420" flex_flow="column"
+                style_flex_main_place="center" style_flex_cross_place="center" style_pad_row="12">
+          <!-- 道路网格 -->
+          <lv_obj width="80%" height="3" style_bg_color="0xFFFFFF" style_bg_opa="40" />
+          <lv_obj width="80%" height="3" style_bg_color="0xFFFFFF" style_bg_opa="40" />
+          <!-- 家/公司标点 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_main_place="space_between" style_flex_cross_place="start" style_pad_hor="60">
+            <lv_obj flex_flow="column" width="content" height="content" style_flex_cross_place="center">
+              <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center"
+                      style_bg_color="#green" style_bg_grad_color="0x2C9D9D" style_bg_grad_dir="hor" style_radius="12">
+                <lv_label text="◪" style_text_color="0xFFFFFF" style_text_font="#font_md" />
+              </lv_obj>
+              <lv_label text="家 · 幸福里小区" style_text_color="#ink" style_text_font="#font_sm" style_pad_top="6" />
+            </lv_obj>
+            <lv_obj flex_flow="column" width="content" height="content" style_flex_cross_place="center">
+              <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center"
+                      style_bg_color="#chip_kara_a" style_bg_grad_color="0xEF6A5E" style_bg_grad_dir="hor" style_radius="12">
+                <lv_label text="▣" style_text_color="0xFFFFFF" style_text_font="#font_md" />
+              </lv_obj>
+              <lv_label text="公司 · 智慧科技园" style_text_color="#ink" style_text_font="#font_sm" style_pad_top="6" />
+            </lv_obj>
+          </lv_obj>
+        </lv_obj>
+
+        <!-- 图例 -->
+        <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center"
+                style_bg_color="0x000000" style_bg_opa="80" style_pad_hor="16" style_pad_ver="10" style_pad_column="16">
+          <lv_obj flex_flow="row" width="content" height="content" style_flex_cross_place="center" style_pad_column="6">
+            <lv_obj width="9" height="9" style_radius="999" style_bg_color="#green" />
+            <lv_label text="家" style_text_color="#ink2" style_text_font="#font_sm" />
+          </lv_obj>
+          <lv_obj flex_flow="row" width="content" height="content" style_flex_cross_place="center" style_pad_column="6">
+            <lv_obj width="9" height="9" style_radius="999" style_bg_color="#chip_kara_a" />
+            <lv_label text="公司" style_text_color="#ink2" style_text_font="#font_sm" />
+          </lv_obj>
+          <lv_label text="高德地图 · 拖动选点" style_text_color="#ink3" style_text_font="#font_sm" style_margin_left="auto" />
+        </lv_obj>
+      </lv_obj>
+
+      <!-- ===== 右：面板 ===== -->
+      <lv_obj flex_flow="column" width="42%" height="content" style_flex_grow="1" style_pad_row="16">
+
+        <!-- 地点设置 -->
+        <lv_obj flex_flow="column" width="100%" height="content">
+          <style name="style_set_group"/>
+          <lv_label text="地点设置" style_text_color="#ink3" style_text_font="#font_sm" style_pad_hor="20" style_pad_top="13" style_pad_bottom="9" />
+          <!-- 家 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="⌂" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="家" style_text_color="#ink" style_text_font="#font_md" />
+              <lv_label text="幸福里小区 · 12栋" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+            </lv_obj>
+            <lv_label text="›" style_text_color="#ink3" style_text_font="#font_md" />
+          </lv_obj>
+          <!-- 公司 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="14" style_pad_hor="20" style_pad_ver="12" style_border_side="top" style_border_width="1" style_border_color="0xFFFFFF" style_border_opa="30">
+            <lv_obj width="34" height="34" flex_flow="row" style_flex_main_place="center" style_flex_cross_place="center">
+              <style name="style_set_ic"/>
+              <lv_label text="▣" style_text_color="#ink2" style_text_font="#font_md" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content" style_flex_grow="1">
+              <lv_label text="公司" style_text_color="#ink" style_text_font="#font_md" />
+              <lv_label text="智慧科技园 · A座" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="2" />
+            </lv_obj>
+            <lv_label text="›" style_text_color="#ink3" style_text_font="#font_md" />
+          </lv_obj>
+        </lv_obj>
+
+        <!-- 出行方式 -->
+        <lv_obj flex_flow="column" width="100%" height="content">
+          <style name="style_set_group"/>
+          <lv_label text="出行方式" style_text_color="#ink3" style_text_font="#font_sm" style_pad_hor="20" style_pad_top="13" style_pad_bottom="9" />
+          <lv_obj flex_flow="row" width="100%" height="content" style_pad_column="8" style_pad_hor="16" style_pad_bottom="16">
+            <lv_obj flex_flow="row" width="content" height="content" style_flex_grow="1" style_flex_main_place="center"><style name="style_toolbtn_active"/><lv_label text="驾车" style_text_color="0x0A0D12" style_text_font="#font_sm" /></lv_obj>
+            <lv_obj flex_flow="row" width="content" height="content" style_flex_grow="1" style_flex_main_place="center"><style name="style_toolbtn"/><lv_label text="公交" style_text_color="#ink2" style_text_font="#font_sm" /></lv_obj>
+            <lv_obj flex_flow="row" width="content" height="content" style_flex_grow="1" style_flex_main_place="center"><style name="style_toolbtn"/><lv_label text="步行" style_text_color="#ink2" style_text_font="#font_sm" /></lv_obj>
+            <lv_obj flex_flow="row" width="content" height="content" style_flex_grow="1" style_flex_main_place="center"><style name="style_toolbtn"/><lv_label text="骑行" style_text_color="#ink2" style_text_font="#font_sm" /></lv_obj>
+          </lv_obj>
+        </lv_obj>
+
+        <!-- 路线卡片 -->
+        <lv_obj flex_flow="column" width="100%" height="content">
+          <style name="style_route_card"/>
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_main_place="space_between" style_flex_cross_place="center">
+            <lv_label text="家 → 公司 · 通勤路线" style_text_color="#ink" style_text_font="#font_md" />
+            <lv_obj width="content" height="content"><style name="style_jam_mid"/><lv_label text="⚠ 轻度拥堵" style_text_color="#warn" style_text_font="#font_sm" /></lv_obj>
+          </lv_obj>
+          <!-- 统计 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_main_place="start" style_pad_column="24" style_pad_top="14">
+            <lv_obj flex_flow="column" height="content">
+              <lv_obj flex_flow="row" width="content" height="content" style_flex_cross_place="center">
+                <lv_label text="28" style_text_color="#ink" style_text_font="#font_xl" />
+                <lv_label text=" 分钟" style_text_color="#ink3" style_text_font="#font_sm" />
+              </lv_obj>
+              <lv_label text="预计时长" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="4" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content">
+              <lv_obj flex_flow="row" width="content" height="content" style_flex_cross_place="center">
+                <lv_label text="12.6" style_text_color="#ink" style_text_font="#font_xl" />
+                <lv_label text=" km" style_text_color="#ink3" style_text_font="#font_sm" />
+              </lv_obj>
+              <lv_label text="距离" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="4" />
+            </lv_obj>
+            <lv_obj flex_flow="column" height="content">
+              <lv_obj flex_flow="row" width="content" height="content" style_flex_cross_place="center">
+                <lv_label text="+8" style_text_color="#ink" style_text_font="#font_xl" />
+                <lv_label text=" 分钟" style_text_color="#ink3" style_text_font="#font_sm" />
+              </lv_obj>
+              <lv_label text="较畅通多" style_text_color="#ink3" style_text_font="#font_sm" style_pad_top="4" />
+            </lv_obj>
+          </lv_obj>
+          <!-- 路径 -->
+          <lv_obj flex_flow="row" width="100%" height="content" style_flex_cross_place="center" style_pad_column="9" style_pad_top="14">
+            <lv_label text="家" style_text_color="#ink2" style_text_font="#font_sm" />
+            <lv_obj width="content" height="2" style_flex_grow="1" style_bg_color="#blue" style_bg_opa="180" />
+            <lv_label text="公司" style_text_color="#ink2" style_text_font="#font_sm" />
+          </lv_obj>
+        </lv_obj>
+
+      </lv_obj>
+
+    </lv_obj>
+
+  </view>
+</screen>
